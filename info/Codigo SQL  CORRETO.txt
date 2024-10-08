@@ -1,0 +1,94 @@
+﻿CREATE TABLE Admin 
+( 
+ ID_ADM INT PRIMARY KEY,  
+ email VARCHAR(255),  
+ senha_acesso VARCHAR(255)
+); 
+
+
+CREATE TABLE Usuario 
+( 
+ email VARCHAR(255),  
+ Informacoes_Medicas VARCHAR(255),  
+ Alergias VARCHAR(255),  
+ Doencas VARCHAR(255),  
+ CPF INT PRIMARY KEY,  
+ objetivos VARCHAR(255),  
+ nome VARCHAR(255),  
+ celular VARCHAR(15),  
+ senha VARCHAR(255),  
+ Endereco VARCHAR(255),  
+ Medicamentos_em_uso VARCHAR(255),  
+ Comorbidades VARCHAR(255)
+); 
+
+
+CREATE TABLE Planos 
+( 
+ Beneficios VARCHAR(255),  
+ Musculacao VARCHAR(255),  
+ Fisioterapia VARCHAR(255),  
+ Nutricao VARCHAR(255),  
+ Premium VARCHAR(255),  
+ Avancado VARCHAR(255),  
+ Basico VARCHAR(255),  
+ Id_plano INT PRIMARY KEY,  
+ pagamento INT,  
+ Precos INT,  
+ idUsuario INT,  
+ FOREIGN KEY (idUsuario) REFERENCES Usuario (CPF)
+); 
+
+
+CREATE TABLE Profissionais 
+( 
+ CPF_CNPJ INT PRIMARY KEY,  
+ Nome VARCHAR(255),  
+ celular VARCHAR(15),  
+ contrato VARCHAR(255),  
+ Curriculo_PDF VARCHAR(255),  
+ senha VARCHAR(255),  
+ Email VARCHAR(255),  
+ Areas_de_atuacao VARCHAR(255)
+); 
+
+
+CREATE TABLE Empresa_Parceiros 
+( 
+ Senha VARCHAR(255),  
+ Parcerias VARCHAR(255),  
+ contrato VARCHAR(255),  
+ CNPJ INT PRIMARY KEY,  
+ Nome_empresa VARCHAR(255),  
+ Setor VARCHAR(255),  
+ Email VARCHAR(255),  
+ Instagram VARCHAR(255),  
+ telefone VARCHAR(15)
+); 
+
+
+CREATE TABLE Gerencia 
+( 
+ CPF INT PRIMARY KEY,  
+ CPF_CNPJ INT,  
+ Id_plano INT,  
+ ID_ADM INT,  
+ CNPJ INT,  
+ FOREIGN KEY (CPF) REFERENCES Usuario (CPF),  
+ FOREIGN KEY (CPF_CNPJ) REFERENCES Profissionais (CPF_CNPJ),  
+ FOREIGN KEY (Id_plano) REFERENCES Planos (Id_plano),  
+ FOREIGN KEY (ID_ADM) REFERENCES Admin (ID_ADM),  
+ FOREIGN KEY (CNPJ) REFERENCES Empresa_Parceiros (CNPJ)
+); 
+
+
+CREATE TABLE Tem 
+( 
+ Id_plano INT,  
+ CPF_CNPJ INT,  
+ CNPJ INT,  
+ PRIMARY KEY (Id_plano, CPF_CNPJ, CNPJ),  
+ FOREIGN KEY (Id_plano) REFERENCES Planos (Id_plano),  
+ FOREIGN KEY (CPF_CNPJ) REFERENCES Profissionais (CPF_CNPJ),  
+ FOREIGN KEY (CNPJ) REFERENCES Empresa_Parceiros (CNPJ)
+);
