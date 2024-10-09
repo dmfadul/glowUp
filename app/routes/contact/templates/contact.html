@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bem-estar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script>
+</head>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <h1 class="logo"> <span class="glow"><a href="teste.html">GLOW-UP </a></span></h1>
+            <nav class="navbar">
+                <ul class="nav-links">
+
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="nutrição.html">Nutrição</a></li>
+                    <li><a href="musculação.html">Musculação</a></li>
+                    <li><a href="fisioterapia.html"> Fisioterapia</a></li>
+                    <li><a href="#admin"></a></li>
+                    <li><a href="premium.html"  id="premium-btn">seja premium</a></li>
+                </ul>
+                <button id="dark-mode-toggle">Modo Escuro</button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+            <section id="contact" class="contact">
+                <div class="container">
+        
+                    <h1 class="hero-title" style="font-size: 47px;">Entre em Contato</h1>
+                            <p class="section-text">Estamos aqui para ajudar você. Preencha o formulário abaixo e entraremos em contato em breve.</p>
+                    
+                            <form action="#" class="contact-form">
+                                <input type="text" name="name" placeholder="Seu Nome" required>
+                                <input type="email" name="email" placeholder="Seu E-mail" required>
+                                <textarea name="message" placeholder="Sua Mensagem" rows="4" required></textarea>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </form>
+                        </div>
+                        
+                    </section>
+
+
+   <div class="back-to-top">
+        <a href="#header"><i class="fas fa-chevron-up"></i></a>
+    </div>
+    <div class="music">
+        <audio controls loop>
+            <source src="{{ url_for('static', filename='music1.mp3') }}" type="audio/mpeg">
+            <source src="{{ url_for('static', filename='music2.mp3') }}" type="audio/mpeg">
+            
+            Seu navegador não suporta áudio HTML.
+        </audio>
+    
+                <div class="music-controls">
+                    <button onclick="previousTrack()"><i class="fas fa-backward"></i></button>
+                    <button onclick="document.querySelector('audio').play()"><i class="fas fa-play"></i></button>
+                    <button onclick="document.querySelector('audio').pause()"><i class="fas fa-pause"></i></button>
+                    <button onclick="nextTrack()"><i class="fas fa-forward"></i></button>
+                </div>
+            </div>
+    </div>
+
+<footer>
+    <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Contato</h3>
+        <ul>
+            <li>Email: contato@example.com</li>
+            <li>Telefone: (11) 1234-5678</li>
+            <li>Endereço: Rua Exemplo, 123, São Paulo, SP</li>
+        </ul>
+    </div>
+    <div class="footer-section social-links">
+        <h3>Siga-nos</h3>
+        <a href="mailto:seuemail@example.com" target="_blank"><i class="far fa-envelope"></i></a>
+        <a href="https://chat.whatsapp.com/LVMMf7SKTL23pxjujo2ogy" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="footer-rating">
+        <p>Classificação: <span class="stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+        </span></p>
+        </div>
+<div class="footer-bottom">
+    &copy; 2024 Glow-Up.
+</div>
+
+</footer>
+
+<!-- Ícones do FontAwesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous">
+    
+    const audioPlayer = document.getElementById('audio-player');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const playPauseIcon = playPauseBtn.querySelector('i');
+
+    playPauseBtn.addEventListener('click', () => {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseIcon.classList.remove('fa-play');
+            playPauseIcon.classList.add('fa-pause');
+        } else {
+            audioPlayer.pause();
+            playPauseIcon.classList.remove('fa-pause');
+            playPauseIcon.classList.add('fa-play');
+        }
+    });
+    <button class="scroll-top-btn"><i class="fas fa-arrow-up"></i></button>
+
+    // JavaScript para o botão de "voltar ao topo"
+    const backToTopButton = document.querySelector('.scroll-top-btn');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+ 
+
+    // JavaScript para a avaliação de estrelas no rodapé
+    const stars = document.querySelectorAll('.footer-rating .star');
+
+    stars.forEach((star, index) => {
+        star.addEventListener('click', () => {
+            stars.forEach((s, i) => {
+                if (i <= index) {
+                    s.classList.add('checked');
+                } else {
+                    s.classList.remove('checked');
+                }
+            });
+        });
+    });
+
+</script>
+</div>
+</body>
+</html>

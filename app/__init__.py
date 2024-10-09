@@ -19,7 +19,9 @@ def create_app():
     # login_manager.login_message_category = 'danger'
     
     from app.routes.login.login import login_bp
+    from app.routes.contact.contact import contact_bp
     app.register_blueprint(login_bp)
+    app.register_blueprint(contact_bp)
 
     return app
 
