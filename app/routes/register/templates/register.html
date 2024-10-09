@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo"> <span class="glow"><a href="home">GLOW-UP </a></span></h1>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="home">Início</a></li>
+                    <li><a href="#admin">Quem somos</a></li>
+                    <li> <a href="login" id="login-btn">login</a></li>
+                </ul>
+                <button id="dark-mode-toggle">Modo Escuro</button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="content">
+        <h1>CADASTRE-SE</h1>
+        <fieldset>
+            <legend>Dados pessoais:</legend>
+            <form action="#" method="post" id="loginForm">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" placeholder=" " required>
+                    <label for="username">Nome completo:</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">E-mail:</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder=" " required>
+                    <label for="password">Crie sua senha:</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="confirmapassword" name="confirmapassword" placeholder=" " required>
+                    <label for="confirmapassword">Confirme sua senha:</label>
+                </div>
+                <fieldset>
+                    <legend>Outras Informações:</legend>
+                    <div class="form-group">
+                        <textarea id="informmedica" name="informmedica" placeholder=" "></textarea>
+                        <label for="informmedica">Informações médicas:</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="objetivos" name="objetivos" required>
+                            <option value="" disabled selected>Selecione seu objetivo</option>
+                            <option value="emagrecer">Emagrecer</option>
+                            <option value="melhorar-condicionamento">Melhorar Condicionamento Físico</option>
+                            <option value="ganhar-massa-muscular">Ganhar Massa Muscular</option>
+                            <option value="definir">Definir</option>
+                        </select>
+                        <label for="objetivos">Objetivos:</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="contact-phone" name="contact-phone" placeholder=" " required>
+                        <label for="contact-phone">Telefone de Emergência:</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="medicines" name="medicines" rows="4" placeholder=" " required></textarea>
+                        <label for="medicines">Medicamentos em Uso:</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="doencas" name="doencas" placeholder=" ">
+                        <label for="doencas">Doenças:</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="allergies" name="allergies" rows="4" placeholder=" " required></textarea>
+                        <label for="allergies">Alergias:</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="comorbidities" name="comorbidities" rows="4" placeholder=" " required></textarea>
+                        <label for="comorbidities">Comorbidades:</label>
+                    </div>
+                </fieldset>
+                <button type="submit" class="submit-btn" onclick="showPopup(); return false;"> Cadastrar </button>
+            </form>
+        </fieldset>
+    </section>
+    
+   <div class="back-to-top">
+    <a href="#header"><i class="fas fa-chevron-up"></i></a>
+</div>
+<div class="music">
+    <audio controls loop>
+        <source src="{{ url_for('static', filename='music1.mp3') }}" type="audio/mpeg">
+        <source src="{{ url_for('static', filename='music2.mp3') }}" type="audio/mpeg">
+        
+        Seu navegador não suporta áudio HTML.
+    </audio>
+
+            <div class="music-controls">
+                <button onclick="previousTrack()"><i class="fas fa-backward"></i></button>
+                <button onclick="document.querySelector('audio').play()"><i class="fas fa-play"></i></button>
+                <button onclick="document.querySelector('audio').pause()"><i class="fas fa-pause"></i></button>
+                <button onclick="nextTrack()"><i class="fas fa-forward"></i></button>
+            </div>
+        </div>
+</div>
+
+</div>
+
+<button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
+                <div id="successPopup" class="popup">
+                    <div class="popup-content">
+                        <h2>Parabéns pelo cadastro!</h2>
+                        <p>Seu cadastro foi realizado com sucesso. Enviamos um código por SMS para o seu número de telefone.</p>
+                        <button id="closePopup">Fechar</button>
+                    </div>
+                </div>
+    <footer>
+        <div class="footer-section">
+            <h3>Links Rápidos</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <ul>
+                <li>Email: contato@example.com</li>
+                <li>Telefone: (11) 1234-5678</li>
+                <li>Endereço: Rua Exemplo, 123, São Paulo, SP</li>
+            </ul>
+        </div>
+        <div class="footer-section social-links">
+            <h3>Siga-nos</h3>
+            <a href="mailto:seuemail@example.com" target="_blank"><i class="far fa-envelope"></i></a>
+            <a href="https://chat.whatsapp.com/LVMMf7SKTL23pxjujo2ogy" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-rating">
+            <p>Classificação: <span class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+            </span></p>
+            </div>
+    <div class="footer-bottom">
+        &copy; 2024 Glow-Up.
+    </div>
+
+</footer>
+
+
+    <!-- Botão de voltar ao topo -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            // Simulação do envio de código por SMS
+            console.log('Código de confirmação enviado por SMS.');
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+// Lista de músicas
+const musicList = ['music1.mp3', 'music2.mp3'];
+let currentSongIndex = 0;
+
+// Inicializa a música
+
+const audioPlayer = document.querySelector('audio');
+
+loadSong(musicList[currentSongIndex]);
+
+// Carrega a música
+function loadSong(song) {
+    audioPlayer.src = song;
+}
+
+// Event listener para o botão de play/pause
+playBtn.addEventListener('click', () => {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playBtn.innerHTML = '&#10074;&#10074;'; // Ícone de pausa
+    } else {
+        audioPlayer.pause();
+        playBtn.innerHTML = '&#9658;'; // Ícone de play
+    }
+});
+
+
+
+
+function nextTrack() {
+    currentTrack++;
+    if (currentTrack >= musicas.length) {
+        currentTrack = 0;
+    }
+    audioPlayer.src = musicas[currentTrack];
+    audioPlayer.play();
+}
+
+
+function previousTrack() {
+    currentTrack--;
+    if (currentTrack < 0) {
+        currentTrack = musicas.length - 1;
+    }
+    audioPlayer.src = musicas[currentTrack];
+    audioPlayer.play();
+}
+    
+        const playBtn = document.getElementById('play-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.querySelector(".scroll-top-btn").style.display = "block";
+            } else {
+                document.querySelector(".scroll-top-btn").style.display = "none";
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.stars .star');
+
+    stars.forEach((star, index) => {
+        star.addEventListener('click', () => {
+            for(let i = 0; i < stars.length; i++) {
+                if(i <= index) {
+                    stars[i].style.color = 'gold';
+                } else {
+                    stars[i].style.color = '#ccc';
+                }
+            }
+            alert(`Você avaliou com ${index + 1} estrelas!`);
+        });
+    });
+});
+</script>
+</body>
+</html>
+
+
+
