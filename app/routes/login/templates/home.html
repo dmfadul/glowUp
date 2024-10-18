@@ -6,33 +6,29 @@
     <title>Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <!-- Adicione o link para a biblioteca FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
 </head>
 <body>
-
     <header>
         <div class="container">
             <h1 class="logo"><span class="glow"><a href="home">GLOW-UP</a></span></h1>
             <nav class="navbar">
                 <ul class="nav-links">
-                    <li><a href="nutrição.html">Nutrição</a></li>
-                    <li><a href="musculação.html">Musculação</a></li>
-                    <li><a href="fisioterapia.html">Fisioterapia</a></li>
-                    <li><a href="contact">Contato</a></li>
+                    <li> <a href="home" id="home-btn">Home</a></li>
+                    <li><a href="login">Login</a></li>
+                    <li><a href="sobre">Sobre Nós</a></li>
+                    <li><a href="contato">Contato</a></li>
                     <li><a href="premium" id="premium-btn">Seja Premium</a></li>
                 </ul>
                 <button id="dark-mode-toggle">Modo Escuro</button>
-             
             </nav>
         </div>
     </header>
-
     <section class="hero">
         <div class="container hero-content">
             <h1>Bem-Vindo ao Glow-Up</h1>
             <h2>Seu parceiro em saúde e bem-estar</h2>
-            <p>Conecte-se com especialistas em nutrição, musculação e fisioterapia.</p>
+            <p>Conecte-se com especialistas em nutrição, musculação e fisioterapia. Ou seja nosso parceiro.</p>
             <a href="register" class="btn-primary">Comece Aqui</a>
         </div>
     </section>
@@ -77,11 +73,9 @@
     <div class="back-to-top">
         <a href="#header"><i class="fas fa-chevron-up"></i></a>
     </div>
-
     <div class="music">
         <audio controls loop>
             <source src="{{ url_for('static', filename='music2.mp3') }}" type="audio/mpeg">
-            Seu navegador não suporta áudio HTML.
         </audio>
         <div class="music-controls">
             <button onclick="previousTrack()"><i class="fas fa-backward"></i></button>
@@ -90,7 +84,6 @@
             <button onclick="nextTrack()"><i class="fas fa-forward"></i></button>
         </div>
     </div>
-
     <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
     <footer>
         <div class="footer-section">
@@ -100,41 +93,30 @@
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#services">Serviços</a></li>
                 <li><a href="#contact">Contato</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Contato</h3>
-            <ul>
-                <li>Email: contato@example.com</li>
-                <li>Telefone: (11) 1234-5678</li>
-                <li>Endereço: Rua Exemplo, 123, São Paulo, SP</li>
+                <li><a href="#contact">Política de privacidade | Termos de uso</a></li>
             </ul>
         </div>
         <div class="footer-section social-links">
-            <h3>Siga-nos</h3>
-            <a href="mailto:seuemail@example.com" target="_blank"><i class="far fa-envelope"></i></a>
+            <h3>Siga-nos em nossas redes sociais</h3>
+            <a href="mailto:glow.upldmy@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
             <a href="https://chat.whatsapp.com/LVMMf7SKTL23pxjujo2ogy" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <div class="footer-rating">
             <p>Classificação: <span class="stars">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
             </span></p>
             </div>
             
     <div class="footer-bottom">
         &copy; 2024 Glow-Up.
     </div>
-
 </footer>
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js">
@@ -165,9 +147,6 @@ playBtn.addEventListener('click', () => {
     }
 });
 
-
-
-
 function nextTrack() {
     currentTrack++;
     if (currentTrack >= musicas.length) {
@@ -176,7 +155,6 @@ function nextTrack() {
     audioPlayer.src = musicas[currentTrack];
     audioPlayer.play();
 }
-
 
 function previousTrack() {
     currentTrack--;
@@ -187,27 +165,29 @@ function previousTrack() {
     audioPlayer.play();
 }
     
-        const playBtn = document.getElementById('play-btn');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
+    const playBtn = document.getElementById('play-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
 
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
+    function scrollToTop() {
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+        });
+    }
         
 
-        window.onscroll = function() {scrollFunction()};
+    window.onscroll = function() {scrollFunction()};
         
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.querySelector(".scroll-top-btn").style.display = "block";
-            } else {
-                document.querySelector(".scroll-top-btn").style.display = "none";
-            }
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.querySelector(".scroll-top-btn").style.display = "block";
+        } else {
+            document.querySelector(".scroll-top-btn").style.display = "none";
         }
-        </script>
+    }
+
+
+    </script>
 </body>
 </html>

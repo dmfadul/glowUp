@@ -1,25 +1,25 @@
 /* Definição das variáveis de cores */
 :root {
-    --primary-color: #00422c; /* Roxo/Lilás */
+    --primary-color: #002f1f; /* Roxo/Lilás */
     --secondary-color: #ffffffef; /* Branco */
-    --accent-color: #f5e069; /* Verde do WhatsApp */
+    --accent-color: #57d399; /* Verde do WhatsApp */
     --background-color: #f3f4f6; /* Cor de fundo suave */
     --about-background-color:#ddd ;
     --border-background-color:#ccc ;
-    --text-color: #333; /* Cor do texto */
-    --hover-color: #ffd000; /* Cor de hover */
+    --text-color: #242424; /* Cor do texto */
+    --hover-color: #57d399; /* Cor de hover */
     --shadow-color: rgba(0, 0, 0, 0.452); /* Cor da sombra */
 }
 body.dark-mode {
     --primary-color: #002e1f; /* Preto/Cinza escuro */
     --secondary-color: #f7f7f7; /* Branco */
-    --accent-color: #ffe75f; /* Roxo claro */
+    --accent-color: #57d399; 
     --background-color: #202020; /* Cor de fundo escuro */
     --about-background-color:#292929fb;
     --text-color: #ffffff; /* Cor do texto clara */
-    --hover-color: #ffd000; /* Roxo escuro */
+    --hover-color: #57d399; 
     --shadow-color: rgba(255, 255, 255, 0.1); /* Cor da sombra clara */
-    --link-color: #f5e069; 
+    --link-color: #57d399; 
 }
 .dark-mode {
     background-color: #2C3E50;
@@ -47,7 +47,7 @@ body.dark-mode {
 }
 
 #dark-mode-toggle {
-    background-color: #4CAF50;
+    background-color: #57d399;
     color: #fff;
     padding: 12px 24px;
     border-radius: 30px;
@@ -63,18 +63,14 @@ body.dark-mode {
 
 #dark-mode-toggle:hover {
     background-color: #fff;
-    color: #4CAF50;
+    color: #57d399;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 #dark-mode-toggle:focus {
     outline: none;
-    box-shadow: 0 0 5px #4CAF50, 0 0 15px #4CAF50;
+    box-shadow: 0 0 5px #57d399, 0 0 15px #4CAF50;
 }
-
-
-
-
 
 
 
@@ -116,18 +112,18 @@ header.scrolled {
 .logo {
     font-size: 32px;
     font-weight: bold;
-    color: #fff893;
+    color: #57d399;
     text-align: center; /* Centraliza o texto da logo */
     margin-bottom: 15px; /* Espaço entre a logo e a navegação */
 }
 
 
 .logo span {
-    color: #d4cc57;
+    color: #57d399;
 }
 .glow{
     display: inline;
-    background: linear-gradient(45deg,#00a753, #5fffca, #fcf957, #ffffc4);
+    background: linear-gradient(45deg,#00a753, #5fffca, #57d399, #ffffc4);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-weight: bold;
@@ -157,7 +153,7 @@ nav ul li {
     display: block;
     border-radius: 5px;
 }
-#login-btn {
+#home-btn {
     background-color: var(--primary-color); /* Cor de fundo principal */
     color: var(--secondary-color); /* Cor do texto */
     border: 2px solid var(--primary-color); /* Borda com a cor principal */
@@ -170,7 +166,7 @@ nav ul li {
     cursor: pointer; /* Cursor de ponteiro */
 }
 
-#login-btn:hover {
+#home-btn:hover {
     background-color: var(--hover-color); /* Cor de fundo no hover */
     color: var(--primary-color); /* Cor do texto no hover */
     transform: scale(1.05); /* Efeito de escala no hover */
@@ -187,12 +183,45 @@ nav ul li {
 
 }
 
+#home-btn{
+    border: 2px solid   #009985;
+    padding: 10px;
+    border-radius: 20px;
+}
+#home-btn:hover{
+    background-color:  #002413d0;
+    color: white;
+
+}
+
 #login-btn{
     border: 2px solid   #009985;
     padding: 10px;
     border-radius: 20px;
 }
 #login-btn:hover{
+    background-color:  #002413d0;
+    color: white;
+
+}
+
+#sobre-btn{
+    border: 2px solid   #009985;
+    padding: 10px;
+    border-radius: 20px;
+}
+#sobre-btn:hover{
+    background-color:  #002413d0;
+    color: white;
+
+}
+
+#contato-btn{
+    border: 2px solid   #009985;
+    padding: 10px;
+    border-radius: 20px;
+}
+#contato-btn:hover{
     background-color:  #002413d0;
     color: white;
 
@@ -207,12 +236,12 @@ nav ul li {
 
 .hero {
     background-color: var(--background-color);
-    padding: 100px 20px; 
+    padding: 0px 20px; 
     display: flex;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
-    text-align: center;
+   
     min-height: 100vh;
     color: var(--text-color);
     position: relative;
@@ -289,7 +318,7 @@ nav ul li {
 .hero form input[type="submit"] {
     padding: 15px;
     font-size: 18px;
-    background: linear-gradient(45deg, #00140e ,#01724c,#f7e164); 
+    background: linear-gradient(45deg, #00140e ,#01724c,#57d399); 
     color: white;
     border: 1px solid transparent;
     border-radius: 22px;
@@ -299,13 +328,13 @@ nav ul li {
 }
 
 .hero form input[type="submit"] {
-    background: linear-gradient(45deg, #00140e ,#01724c,#f7e164);
+    background: linear-gradient(45deg, #00140e ,#01724c,#57d399);
     transform: scale(1.05);
     border: 1px solid transparent;
 }
 
 .hero form input[type="submit"]:hover {
-    background: linear-gradient(45deg,  #f7e164,#01724c, #00140e);
+    background: linear-gradient(45deg,  #57d399,#01724c, #00140e);
     transform: scale(1.05);
 }
 
@@ -478,7 +507,7 @@ nav ul li {
 }
 
 .scroll-top-btn:hover {
-    background-color: #ebc72a;
+    background-color: #57d399;
     transform: scale(1.1);
 }
 .back-to-top {
@@ -507,7 +536,7 @@ nav ul li {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25D366;
+    background-color: #57d399;
     color: #fff;
     width: 50px;
     height: 50px;
@@ -568,7 +597,7 @@ nav ul li {
 }
 
     button[type="submit"] {
-        background-color: #c9b128f8; /* Cor de fundo principal */
+        background-color: #57d399; /* Cor de fundo principal */
         color: white; /* Cor do texto */
         border: none; /* Sem borda */
         padding: 10px 20px; /* Espaçamento interno */
@@ -583,7 +612,7 @@ nav ul li {
     
     button[type="submit"]:hover {
         background-color: #007c6c; /* Cor de fundo no hover */
-        color: #f8f665;
+        color: #57d399;
         transform: scale(1.05); /* Efeito de escala no hover */
         
     }
@@ -599,12 +628,12 @@ nav ul li {
     }
     
     .btn:hover {
-        background-color: #c5a825; /* Tom mais escuro de roxo/lilás */
+        background-color: #57d399; /* Tom mais escuro de roxo/lilás */
     }
     #premium-btn{
-        background: linear-gradient(45deg, #002419 ,#008f5f,#f7e164); 
-        color: #fdff97; /* Cor do texto */
-        border: 2px solid #fffd88be; /* Borda com a cor principal */
+        background: linear-gradient(45deg, #002419 ,#008f5f,#57d399); 
+        color: #ffffff; /* Cor do texto */
+        border: 2px solid #57d399; /* Borda com a cor principal */
         padding: 10px 20px; /* Espaçamento interno */
         border-radius: 25px; /* Cantos arredondados */
         font-size: 16px; /* Tamanho da fonte */
@@ -615,7 +644,7 @@ nav ul li {
     }
     
     #premium-btn:hover {
-        background: linear-gradient(45deg, #f7e164,#008f5f, #002419); /* Cor de fundo no hover */
+        background: linear-gradient(45deg, #57d399,#008f5f, #002419); /* Cor de fundo no hover */
         color: rgba(0, 0, 0, 0.897); /* Cor do texto no hover */
         transform: scale(1.05); /* Efeito de escala no hover */
     }
@@ -768,7 +797,7 @@ nav ul li {
 }
 
 .btn-primary:hover {
-    background-color: #ffa600;
+    background-color: #57d399;
     transform: scale(1.05);
 }
 
@@ -809,7 +838,7 @@ nav ul li {
 
 .service-box i {
     font-size: 3em;
-    color: #ffbb00;
+    color: #57d399;
     margin-bottom: 10px;
 }
 
@@ -851,7 +880,7 @@ nav ul li {
 
 .testimonial-box cite {
     font-style: italic;
-    color: #ffbb01;
+    color: #57d399;
 }
 .parcerias-destaques {
     background-color: #fff;
@@ -882,7 +911,7 @@ nav ul li {
 
 .destaque-item h3 {
     font-size: 1.5rem;
-    color: #ffd105;
+    color: #57d399;
     margin-bottom: 10px;
 }
 
@@ -1014,7 +1043,7 @@ nav ul li {
 
 
 .cta .btn-primary:hover {
-    background-color: #d4c712;
+    background-color: #57d399;
     color: #fff;
 }
 @keyframes fadeIn {
@@ -1419,7 +1448,7 @@ nav ul li {
 }
 
 h1 {
-    color: #f1ba05;
+    color: #57d399;
     font-size: 2.5em;
     margin-bottom: 30px;
     text-align: center;
@@ -1788,7 +1817,6 @@ footer {
     border-top: 5px solid var(--accent-color); /* Linha no topo do rodapé */
     position: relative;
     overflow: hidden;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('rodapé.jpeg'); /* Substitua pelo caminho da sua imagem de fundo */
     background-size: cover;
     background-position: center;
 }
@@ -1918,22 +1946,6 @@ footer p {
     background-color: var(--hover-color);
 }
 
-.stars {
-    display: inline-block; /* Para centralizar horizontalmente */
-}
-
-.stars .star {
-    font-size: 2rem;
-    cursor: pointer;
-    color: #ccc;
-    transition: color 0.3s ease;
-}
-
-.stars .star:hover,
-.stars .star:hover ~ .star {
-    color: gold;
-}
-
 .footer-bottom {
     text-align: center; /* Centraliza o texto do rodapé */
     margin-top: 20px;
@@ -2042,7 +2054,7 @@ footer p {
 
 .social-links i {
     font-size: 1.5rem;
-    color: #f5df60; /* Cor padrão dos ícones */
+    color: #57d399; /* Cor padrão dos ícones */
     margin: 0 10px;
 }
 .social-links i:hover {
@@ -2069,7 +2081,7 @@ footer p {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #00301c, #009148, #c2a835, #e4d58c);
+    background: linear-gradient(45deg, #00301c, #009148, #57d399, #e4d58c);
     border-radius: 8px;
 }
 

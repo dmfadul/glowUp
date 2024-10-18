@@ -13,15 +13,16 @@
             <h1 class="logo"> <span class="glow"><a href="home">GLOW-UP </a> </span></h1>
             <nav class="navbar">
                 <ul class="nav-links">
-                    <li><a href="home">Início</a></li>
-                    <li><a href="#admin">Quem somos</a></li>
-                    <li> <a href="register">Cadastro</a></li>
+                    <li><a href="home">Home</a></li>
+                    <li> <a href="login" id="login-btn">Login</a></li>
+                    <li><a href="sobre">Sobre Nós</a></li>
+                    <li><a href="contato">Contato</a></li>
+                    <li><a href="premium" id="premium-btn">Seja Premium</a></li>
                 </ul>
                 <button id="dark-mode-toggle">Modo Escuro</button>
             </nav>
         </div>
     </header>
-
     <main>
         <center>
             <br><br>
@@ -29,7 +30,6 @@
                 <h1>Login</h1>
                 <br>
                 <fieldset>
-                    <legend>Dados de Login:</legend>
                     <form action="#" method="post" id="loginForm">
                         <div class="form-group">
                             <label for="email">E-mail:</label>
@@ -40,9 +40,9 @@
                             <input type="password" id="password" name="password" placeholder="Digite sua senha..." required>
                         </div>
                         
-                        <a href="home"> <button type="submit" >Login </button>
+                        <a href="home"> <button type="submit" >Entrar</button>
                     </a>
-                       <p>Não tem uma conta? <a href="register" color=white>Cadastre-se</a> </p>
+                       <p>Ainda não possui uma conta? <a href="register" color=white>Cadastre-se</a> </p>
                     </form>
                 </fieldset>
                 <br><br>
@@ -53,10 +53,7 @@
         <audio controls loop>
             <source src="{{ url_for('static', filename='music1.mp3') }}" type="audio/mpeg">
             <source src="{{ url_for('static', filename='music2.mp3') }}" type="audio/mpeg">
-            
-            Seu navegador não suporta áudio HTML.
         </audio>
-    
                 <div class="music-controls">
                     <button onclick="previousTrack()"><i class="fas fa-backward"></i></button>
                     <button onclick="document.querySelector('audio').play()"><i class="fas fa-play"></i></button>
@@ -64,8 +61,7 @@
                     <button onclick="nextTrack()"><i class="fas fa-forward"></i></button>
                 </div>
             </div>
-    </div>
-    
+    </div>    
     <footer>
         <div class="footer-section">
             <h3>Links Rápidos</h3>
@@ -77,17 +73,9 @@
                 <li><a href="#contact">Política de privacidade | Termos de uso</a></li>
             </ul>
         </div>
-        <div class="footer-section">
-            <h3>Contato</h3>
-            <ul>
-                <li>Email: contato@example.com</li>
-                <li>Telefone: (11) 1234-5678</li>
-                <li>Endereço: Rua Exemplo, 123, São Paulo, SP</li>
-            </ul>
-        </div>
         <div class="footer-section social-links">
-            <h3>Siga-nos</h3>
-            <a href="mailto:seuemail@example.com" target="_blank"><i class="far fa-envelope"></i></a>
+            <h3>Siga-nos em nossas redes sociais</h3>
+            <a href="mailto:glow.upldmy@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
             <a href="https://chat.whatsapp.com/LVMMf7SKTL23pxjujo2ogy" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -99,16 +87,16 @@
                 <li><a href="#home">Gerar relatórios</a></li>
             </ul>
         </div>
-        
-            <div class="footer-rating">
-                <p>Classificação: <span class="stars">
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                </span></p>
-                </div>
+        <div class="footer-rating">
+            <p>Classificação: <span class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                </span>
+            </p>
+        </div>
         <div class="footer-bottom">
             &copy; 2024 Glow-Up.
         </div>
