@@ -4,190 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- Adicione o link para a biblioteca FontAwesome -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
 </head>
 <body>
     <header>
         <div class="container">
-            <h1 class="logo"><span class="glow"><a href="home">GLOW-UP</a></span></h1>
+            <h1 class="logo"><a href="home" class="glow">GLOW-UP</a></h1>
             <nav class="navbar">
                 <ul class="nav-links">
-                    <li> <a href="home" id="home-btn">Home</a></li>
+                    <li><a href="home" id="home-btn">Home</a></li>
                     <li><a href="login">Login</a></li>
                     <li><a href="sobre">Sobre Nós</a></li>
                     <li><a href="contato">Contato</a></li>
                     <li><a href="premium" id="premium-btn">Seja Premium</a></li>
                 </ul>
-                <button id="dark-mode-toggle">Modo Escuro</button>
             </nav>
         </div>
     </header>
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Bem-Vindo ao Glow-Up</h1>
-            <h2>Seu parceiro em saúde e bem-estar</h2>
-            <p>Conecte-se com especialistas em nutrição, musculação e fisioterapia. Ou seja nosso parceiro.</p>
-            <a href="register" class="btn-primary">Comece Aqui</a>
-        </div>
-    </section>
 
-    <section class="services">
-        <div class="container">
-            <h2>Nossos Serviços</h2>
-            <div class="service-boxes">
-                <div class="service-box">
-                    <i class="fas fa-dumbbell"></i>
-                    <h3>Musculação</h3>
-                    <p>Treinamentos personalizados para atingir seus objetivos de forma eficiente e segura.</p>
-                </div>
-                <div class="service-box">
-                    <i class="fas fa-apple-alt"></i>
-                    <h3>Nutrição</h3>
-                    <p>Planos alimentares adaptados às suas necessidades e metas de saúde.</p>
-                </div>
-                <div class="service-box">
-                    <i class="fas fa-thermometer-half"></i>
-                    <h3>Fisioterapia</h3>
-                    <p>Tratamentos especializados para recuperação e manutenção da saúde física.</p>
+    <main>
+        <section class="hero">
+            <div class="carousel-background">
+                <div class="carousel-slide">
+                    <img src="" alt="Imagem 1">
+                    <img src="imagem2.jpg" alt="Imagem 2">
+                    <img src="imagem1.jpg" alt="Imagem 3">
+                    <img src="imagem3.jpg" alt="Imagem 4">
+                    <img src="imagem5.jpg" alt="Imagem 5">
+                    <img src="imagem6.jpg" alt="Imagem 6">
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <div class="container">
-            <h2>O que nossos clientes dizem</h2>
-            <div class="testimonial-box">
-                <p>"O Glow-Up transformou minha saúde e bem-estar. Recomendo a todos!"</p>
-                <cite>- João Silva</cite>
+            <div class="content">
+                <h1>Bem-vindo a GLOW-UP!</h1>
+                <p>Descubra como podemos ajudar você a ter uma vida saudável e equilibrada.</p>
+                <a href="register" class="btn-primary">Cadastre-se</a>
             </div>
-            <div class="testimonial-box">
-                <p>"A equipe é muito profissional e os resultados são incríveis. Estou muito satisfeito."</p>
-                <cite>- Maria Oliveira</cite>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="back-to-top">
-        <a href="#header"><i class="fas fa-chevron-up"></i></a>
-    </div>
-    <div class="music">
-        <audio controls loop>
-            <source src="{{ url_for('static', filename='music2.mp3') }}" type="audio/mpeg">
-        </audio>
-        <div class="music-controls">
-            <button onclick="previousTrack()"><i class="fas fa-backward"></i></button>
-            <button onclick="document.querySelector('audio').play()"><i class="fas fa-play"></i></button>
-            <button onclick="document.querySelector('audio').pause()"><i class="fas fa-pause"></i></button>
-            <button onclick="nextTrack()"><i class="fas fa-forward"></i></button>
-        </div>
-    </div>
-    <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
+        <section class="services">
+            <div class="container">
+                <h2>Nossos Serviços</h2>
+                <div class="service-boxes">
+                    <div class="service-box">
+                        <i class="fas fa-dumbbell"></i>
+                        <h3>Musculação</h3>
+                        <p>Treinamentos personalizados para atingir seus objetivos de forma eficiente e segura.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fas fa-apple-alt"></i>
+                        <h3>Nutrição</h3>
+                        <p>Planos alimentares adaptados às suas necessidades e metas de saúde.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fas fa-thermometer-half"></i>
+                        <h3>Fisioterapia</h3>
+                        <p>Tratamentos especializados para recuperação e manutenção da saúde física.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>O que nossos clientes dizem</h2>
+                <div class="testimonial-box">
+                    <p>"O Glow-Up transformou minha saúde e bem-estar. Recomendo a todos!"</p>
+                    <cite>- João Silva</cite>
+                </div>
+                <div class="testimonial-box">
+                    <p>"A equipe é muito profissional e os resultados são incríveis. Estou muito satisfeito."</p>
+                    <cite>- Maria Oliveira</cite>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <div class="footer-section">
-            <h3>Links Rápidos</h3>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#services">Serviços</a></li>
-                <li><a href="#contact">Contato</a></li>
-                <li><a href="#contact">Política de privacidade | Termos de uso</a></li>
-            </ul>
-        </div>
-        <div class="footer-section social-links">
-            <h3>Siga-nos em nossas redes sociais</h3>
-            <a href="mailto:glow.upldmy@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
-            <a href="https://chat.whatsapp.com/LVMMf7SKTL23pxjujo2ogy" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-        </div>
-        <div class="footer-rating">
-            <p>Classificação: <span class="stars">
-                <span class="star" data-value="1">★</span>
-                <span class="star" data-value="2">★</span>
-                <span class="star" data-value="3">★</span>
-                <span class="star" data-value="4">★</span>
-                <span class="star" data-value="5">★</span>
-            </span></p>
+        <div class="footer-sections">
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#privacy">Política de privacidade | Termos de uso</a></li>
+                </ul>
             </div>
-            
-    <div class="footer-bottom">
-        &copy; 2024 Glow-Up.
-    </div>
-</footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js">
+            <div class="footer-section social-links">
+                <h3>Siga-nos em nossas redes sociais</h3>
+                <a href="mailto:glow.upldmy@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+                <a href="https://chat.whatsapp.com/LVMMf7SKTL23pxjujo2ogy" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
 
-// Lista de músicas
-const musicList = ['music1.mp3', 'music2.mp3', 'music3.mp3'];
-let currentSongIndex = 0;
+            <div class="footer-section footer-rating">
+                <p>Classificação:</p>
+                <div class="stars">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+            </div>
+        </div>
 
-// Inicializa a música
-
-const audioPlayer = document.querySelector('audio');
-
-loadSong(musicList[currentSongIndex]);
-
-// Carrega a música
-function loadSong(song) {
-    audioPlayer.src = song;
-}
-
-// Event listener para o botão de play/pause
-playBtn.addEventListener('click', () => {
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-        playBtn.innerHTML = '&#10074;&#10074;'; // Ícone de pausa
-    } else {
-        audioPlayer.pause();
-        playBtn.innerHTML = '&#9658;'; // Ícone de play
-    }
-});
-
-function nextTrack() {
-    currentTrack++;
-    if (currentTrack >= musicas.length) {
-        currentTrack = 0;
-    }
-    audioPlayer.src = musicas[currentTrack];
-    audioPlayer.play();
-}
-
-function previousTrack() {
-    currentTrack--;
-    if (currentTrack < 0) {
-        currentTrack = musicas.length - 1;
-    }
-    audioPlayer.src = musicas[currentTrack];
-    audioPlayer.play();
-}
-    
-    const playBtn = document.getElementById('play-btn');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-
-    function scrollToTop() {
-        window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-        });
-    }
-        
-
-    window.onscroll = function() {scrollFunction()};
-        
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.querySelector(".scroll-top-btn").style.display = "block";
-        } else {
-            document.querySelector(".scroll-top-btn").style.display = "none";
-        }
-    }
-
-
-    </script>
+        <div class="footer-bottom">
+            &copy; 2024 Glow-Up.
+        </div>
+    </footer>
 </body>
 </html>

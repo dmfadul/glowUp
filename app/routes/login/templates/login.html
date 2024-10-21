@@ -23,45 +23,31 @@
             </nav>
         </div>
     </header>
-    <main>
-        <center>
+
+    <main>    
+        <section class="content">
+            <h1>Login</h1>
+            <br>
+            <fieldset>
+                <form action="#" method="post" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" placeholder="Digite sua senha..." required>
+                    </div>
+                    
+                    <a href="home"> <button type="submit" >Entrar</button>
+                </a>
+                    <p>Ainda não possui uma conta? <a href="register" color=white>Cadastre-se</a> </p>
+                </form>
+            </fieldset>
             <br><br>
-            <section class="content">
-                <h1>Login</h1>
-                <br>
-                <fieldset>
-                    <form action="#" method="post" id="loginForm">
-                        <div class="form-group">
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email" placeholder="Digite seu e-mail..." required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Senha:</label>
-                            <input type="password" id="password" name="password" placeholder="Digite sua senha..." required>
-                        </div>
-                        
-                        <a href="home"> <button type="submit" >Entrar</button>
-                    </a>
-                       <p>Ainda não possui uma conta? <a href="register" color=white>Cadastre-se</a> </p>
-                    </form>
-                </fieldset>
-                <br><br>
-            </section>
-        </center>
+        </section>
     </main>
-    <div class="music">
-        <audio controls loop>
-            <source src="{{ url_for('static', filename='music1.mp3') }}" type="audio/mpeg">
-            <source src="{{ url_for('static', filename='music2.mp3') }}" type="audio/mpeg">
-        </audio>
-                <div class="music-controls">
-                    <button onclick="previousTrack()"><i class="fas fa-backward"></i></button>
-                    <button onclick="document.querySelector('audio').play()"><i class="fas fa-play"></i></button>
-                    <button onclick="document.querySelector('audio').pause()"><i class="fas fa-pause"></i></button>
-                    <button onclick="nextTrack()"><i class="fas fa-forward"></i></button>
-                </div>
-            </div>
-    </div>    
+
     <footer>
         <div class="footer-section">
             <h3>Links Rápidos</h3>

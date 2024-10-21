@@ -154,41 +154,6 @@
 
 <!-- Ícones do FontAwesome -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous">
-    
-    const audioPlayer = document.getElementById('audio-player');
-    const playPauseBtn = document.getElementById('play-pause-btn');
-    const playPauseIcon = playPauseBtn.querySelector('i');
-
-    playPauseBtn.addEventListener('click', () => {
-        if (audioPlayer.paused) {
-            audioPlayer.play();
-            playPauseIcon.classList.remove('fa-play');
-            playPauseIcon.classList.add('fa-pause');
-        } else {
-            audioPlayer.pause();
-            playPauseIcon.classList.remove('fa-pause');
-            playPauseIcon.classList.add('fa-play');
-        }
-    });
-    <button class="scroll-top-btn"><i class="fas fa-arrow-up"></i></button>
-
-    // JavaScript para o botão de "voltar ao topo"
-    const backToTopButton = document.querySelector('.scroll-top-btn');
-
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
-        }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
 
     // JavaScript para a avaliação de estrelas no rodapé
     const stars = document.querySelectorAll('.footer-rating .star');

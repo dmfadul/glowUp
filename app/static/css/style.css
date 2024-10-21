@@ -1,26 +1,27 @@
-/* Definição das variáveis de cores */
 :root {
-    --primary-color: #002f1f; /* Roxo/Lilás */
-    --secondary-color: #ffffffef; /* Branco */
-    --accent-color: #57d399; /* Verde do WhatsApp */
-    --background-color: #f3f4f6; /* Cor de fundo suave */
+    --primary-color: #002f1f;
+    --secondary-color: #ffffffef; 
+    --accent-color: #57d399;
+    --background-color: #f3f4f6;
     --about-background-color:#ddd ;
     --border-background-color:#ccc ;
-    --text-color: #242424; /* Cor do texto */
-    --hover-color: #57d399; /* Cor de hover */
-    --shadow-color: rgba(0, 0, 0, 0.452); /* Cor da sombra */
-}
-body.dark-mode {
-    --primary-color: #002e1f; /* Preto/Cinza escuro */
-    --secondary-color: #f7f7f7; /* Branco */
-    --accent-color: #57d399; 
-    --background-color: #202020; /* Cor de fundo escuro */
-    --about-background-color:#292929fb;
-    --text-color: #ffffff; /* Cor do texto clara */
+    --text-color: #242424; 
     --hover-color: #57d399; 
-    --shadow-color: rgba(255, 255, 255, 0.1); /* Cor da sombra clara */
+    --shadow-color: rgba(0, 0, 0, 0.452); 
+}
+
+body.dark-mode {
+    --primary-color: #002e1f; 
+    --secondary-color: #f7f7f7; 
+    --accent-color: #57d399; 
+    --background-color: #202020; 
+    --about-background-color:#292929fb;
+    --text-color: #ffffff; 
+    --hover-color: #57d399; 
+    --shadow-color: rgba(255, 255, 255, 0.1); 
     --link-color: #57d399; 
 }
+
 .dark-mode {
     background-color: #2C3E50;
     color: #ecf0f1;
@@ -72,9 +73,6 @@ body.dark-mode {
     box-shadow: 0 0 5px #57d399, 0 0 15px #4CAF50;
 }
 
-
-
-
 html, body {
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
@@ -104,10 +102,10 @@ header {
     box-shadow: 0 4px 12px var(--shadow-color); /* Sombra mais suave */
     transition: background-color 0.3s;
 }
+
 header.scrolled {
     background-color: var(--hover-color); /* Muda a cor do cabeçalho ao rolar */
 }
-
 
 .logo {
     font-size: 32px;
@@ -117,10 +115,10 @@ header.scrolled {
     margin-bottom: 15px; /* Espaço entre a logo e a navegação */
 }
 
-
 .logo span {
     color: #57d399;
 }
+
 .glow{
     display: inline;
     background: linear-gradient(45deg,#00a753, #5fffca, #57d399, #ffffc4);
@@ -128,9 +126,6 @@ header.scrolled {
     -webkit-background-clip: text;
     font-weight: bold;
 }
-
-
-
 
 nav ul {
     list-style-type: none;
@@ -153,6 +148,7 @@ nav ul li {
     display: block;
     border-radius: 5px;
 }
+
 #home-btn {
     background-color: var(--primary-color); /* Cor de fundo principal */
     color: var(--secondary-color); /* Cor do texto */
@@ -177,6 +173,7 @@ nav ul li {
     padding: 10px;
     border-radius: 20px;
 }
+
 #cadastre-se-btn:hover{
     background-color:  #002413d0;
     color: white;
@@ -188,6 +185,7 @@ nav ul li {
     padding: 10px;
     border-radius: 20px;
 }
+
 #home-btn:hover{
     background-color:  #002413d0;
     color: white;
@@ -199,6 +197,7 @@ nav ul li {
     padding: 10px;
     border-radius: 20px;
 }
+
 #login-btn:hover{
     background-color:  #002413d0;
     color: white;
@@ -210,6 +209,7 @@ nav ul li {
     padding: 10px;
     border-radius: 20px;
 }
+
 #sobre-btn:hover{
     background-color:  #002413d0;
     color: white;
@@ -221,6 +221,7 @@ nav ul li {
     padding: 10px;
     border-radius: 20px;
 }
+
 #contato-btn:hover{
     background-color:  #002413d0;
     color: white;
@@ -232,8 +233,6 @@ nav ul li {
     transform: scale(1.1); /* Efeito de escala no hover */
 }
 
-
-
 .hero {
     background-color: var(--background-color);
     padding: 0px 20px; 
@@ -241,11 +240,11 @@ nav ul li {
     border-radius: 10px;
     justify-content: center;
     align-items: center;
-   
     min-height: 100vh;
     color: var(--text-color);
     position: relative;
 }
+
 .hero::before {
     content: '';
     position: absolute;
@@ -256,7 +255,6 @@ nav ul li {
     background: linear-gradient( rgba(0,0,0,0.2), rgba(0,0,0,0.2)); /* Adiciona um gradiente sobre o fundo da hero section */
     z-index: -1;
 }
-
 
 .hero .container {
     display: flex;
@@ -275,29 +273,26 @@ nav ul li {
     margin: 0 auto;
 }
 
+.hero h1, .hero p, .footer-section h3 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
 
-    .hero h1, .hero p, .footer-section h3 {
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        text-align: justify;
-    }
-
-
-    .hero h1 {
+.hero h1 {
     font-size: 3.5rem;;
     margin-bottom: 10px;
     color: var(--primary-color);
-    }
+}
 
-    .hero h2 {
-        font-size: 2em;
-        margin-bottom: 20px;
-    }
-    
-    
-    .hero p {
+.hero h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.hero p {
     font-size: 1.4rem;
     margin-bottom: 30px;
-    }
+}
 
 .hero form {
     display: flex;
@@ -484,10 +479,12 @@ nav ul li {
         transform: translateX(0);
     }
 }
- img{
+
+img{
     width: 650px;
- }
- .scroll-top-btn {
+}
+
+.scroll-top-btn {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -510,112 +507,28 @@ nav ul li {
     background-color: #57d399;
     transform: scale(1.1);
 }
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    display: none;
-}
 
-.back-to-top a {
-    color: var(--secondary-color);
-    font-size: 2rem;
+
+button[type="submit"] {
+    background-color: #57d399; /* Cor de fundo principal */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 25px; /* Cantos arredondados */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    text-transform: lowercase; /* Transformação do texto */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições */
+    cursor: pointer; /* Cursor de ponteiro */
     text-decoration: none;
-    background: var(--primary-color);
-    padding: 10px 15px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
 }
 
-.back-to-top a:hover {
-    background-color: var(--hover-color);
-}
-
- .whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #57d399;
-    color: #fff;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    font-size: 24px;
-    z-index: 999;
-}
-.whatsapp:hover {
-    background-color: darken(var(--accent-color), 10%);
-}
-
-
-.music {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: rgba(28, 158, 87, 0.568); 
-    padding: 10px;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px var(--shadow-color);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-.music:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.music-controls button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    color: #ffffff;
-    transition: color 0.3s transform 0.3s ease;
-}
-
-.music-controls button:hover {
-    color: var(--accent-color);
-    transform: scale(1.1);
-}
-
-.music-title {
-    flex-grow: 1;
-    margin: 0 10px;
-    font-size: 14px;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-    button[type="submit"] {
-        background-color: #57d399; /* Cor de fundo principal */
-        color: white; /* Cor do texto */
-        border: none; /* Sem borda */
-        padding: 10px 20px; /* Espaçamento interno */
-        border-radius: 25px; /* Cantos arredondados */
-        font-size: 16px; /* Tamanho da fonte */
-        font-weight: bold; /* Peso da fonte */
-        text-transform: lowercase; /* Transformação do texto */
-        transition: background-color 0.3s ease, transform 0.3s ease; /* Transições */
-        cursor: pointer; /* Cursor de ponteiro */
-        text-decoration: none;
-    }
+button[type="submit"]:hover {
+    background-color: #007c6c; /* Cor de fundo no hover */
+    color: #57d399;
+    transform: scale(1.05); /* Efeito de escala no hover */
     
-    button[type="submit"]:hover {
-        background-color: #007c6c; /* Cor de fundo no hover */
-        color: #57d399;
-        transform: scale(1.05); /* Efeito de escala no hover */
-        
-    }
+}
     
 .btn {
     background-color:  #00411b; /* Roxo/Lilás */
@@ -625,110 +538,111 @@ nav ul li {
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    }
+}
     
-    .btn:hover {
-        background-color: #57d399; /* Tom mais escuro de roxo/lilás */
-    }
-    #premium-btn{
-        background: linear-gradient(45deg, #002419 ,#008f5f,#57d399); 
-        color: #ffffff; /* Cor do texto */
-        border: 2px solid #57d399; /* Borda com a cor principal */
-        padding: 10px 20px; /* Espaçamento interno */
-        border-radius: 25px; /* Cantos arredondados */
-        font-size: 16px; /* Tamanho da fonte */
-        font-weight: bold; /* Peso da fonte */
-        text-transform: uppercase; /* Transformação do texto */
-        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transições */
-        cursor: pointer; /* Cursor de ponteiro */
-    }
-    
-    #premium-btn:hover {
-        background: linear-gradient(45deg, #57d399,#008f5f, #002419); /* Cor de fundo no hover */
-        color: rgba(0, 0, 0, 0.897); /* Cor do texto no hover */
-        transform: scale(1.05); /* Efeito de escala no hover */
-    }
-    
-    .back-to-top {
-        position: relative;
-        }
-        
-        .back-to-top a {
-        color: #FFF; /* Cor do ícone */
-        font-size: 2rem;
-        text-decoration: none;
-        }
+.btn:hover {
+    background-color: #57d399; /* Tom mais escuro de roxo/lilás */
+}
+#premium-btn{
+    background: linear-gradient(45deg, #002419 ,#008f5f,#57d399); 
+    color: #ffffff; /* Cor do texto */
+    border: 2px solid #57d399; /* Borda com a cor principal */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 25px; /* Cantos arredondados */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    text-transform: uppercase; /* Transformação do texto */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transições */
+    cursor: pointer; /* Cursor de ponteiro */
+}
 
-        .about {
-            background-color: var(--secondary-color);
-            padding: 70px 0;
-            text-align: center;
-        }
-      
-        .section-title {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-      
-        .section-text {
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
-      
-        section {
-            padding: 50px 0;
-            text-align: center;
-        }
-        
-        .section-title {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        
-        .section-text {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .page-summary {
-            margin: 20px 0;
-        }
-        
-        .page-summary h3 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        
-        .page-summary p {
-            font-size: 1.2em;
-        }
+#premium-btn:hover {
+    background: linear-gradient(45deg, #57d399,#008f5f, #002419); /* Cor de fundo no hover */
+    color: rgba(0, 0, 0, 0.897); /* Cor do texto no hover */
+    transform: scale(1.05); /* Efeito de escala no hover */
+}
+
+.back-to-top {
+    position: relative;
+}
     
-        .services {
-           background-color: var(--background-color);
-            padding: 80px 0;
-            text-align: center;
-        }
-      
-        .service-item {
-            margin-bottom: 40px;
-        }
-      
-        .service-item i {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #008b1e;
-        }
-      
-        .service-item h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-      
-        .service-item p {
-            font-size: 18px;
-        }
-            /* Tips Section */
+.back-to-top a {
+color: #FFF; /* Cor do ícone */
+font-size: 2rem;
+text-decoration: none;
+}
+
+.about {
+    background-color: var(--secondary-color);
+    padding: 70px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.section-text {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.section-text {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-summary {
+    margin: 20px 0;
+}
+
+.page-summary h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.page-summary p {
+    font-size: 1.2em;
+}
+
+.services {
+    background-color: var(--background-color);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.service-item {
+    margin-bottom: 40px;
+}
+
+.service-item i {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #008b1e;
+}
+
+.service-item h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.service-item p {
+    font-size: 18px;
+}
+         
+/* Tips Section */
 .tips {
     background-color: var(--background-color);
     padding: 50px 0;
@@ -767,6 +681,7 @@ nav ul li {
     line-height: 1.6;
     color: #003528;
 }
+
 /* Estilos da seção de 'Sobre Nós' */
 .about-us {
     background-color: var(--about-background-color);
@@ -1614,6 +1529,7 @@ legend {
         opacity: 1;
     }
 }
+
 /* Estilos da seção de contato */
  /* Contact Section */
  .contact {
@@ -1739,54 +1655,6 @@ legend {
     background-color: var(--hover-color);
 }
 
-
-
-@media screen and (max-width: 768px) {
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group input[type="date"],
-    .form-group textarea {
-        width: calc(100% - 20px); /* Ajuste de largura para telas menores */
-    }
-}
-
-/* Estilos para telas ainda menores */
-@media screen and (max-width: 600px) {
-    .form-group label {
-        font-size: 14px; /* Reduzir o tamanho da fonte das etiquetas */
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group input[type="date"],
-    .form-group textarea {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 14px; 
-        transition: border-color 0.3s ease;
-    }
-
-    button[type="submit"] {
-        font-size: 14px; /* Reduzir o tamanho da fonte do botão */
-    }
-}
-
-
-
-/* Estilos responsivos */
-@media screen and (max-width: 768px) {
-    .music {
-        left: 10px;
-        right: 10px;
-        border-radius: 20px;
-        padding: 8px;
-    }
-
-    .music-title {
-        font-size: 12px;
-    }
-}
 /* Estilos para o link de esqueceu a senha */
 #forgotPasswordBtn {
     background-color: transparent;
@@ -1845,66 +1713,67 @@ footer p {
     position: relative;
 }
 
-
 .footer-rating p {
     margin-bottom: 10px;
 }
-   .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            animation: fadeIn 0.5s ease-in;
-        }
 
-        .popup h2 {
-            margin-top: 0;
-        }
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in;
+}
 
-        .popup button {
-            background: #00a859; /* Verde escuro */
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+.popup h2 {
+    margin-top: 0;
+}
 
-        .popup button:hover {
-            background: #007a4d; /* Verde mais escuro */
-        }
+.popup button {
+    background: #00a859; /* Verde escuro */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
 
-        .popup-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ff4d4d; /* Vermelho */
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.popup button:hover {
+    background: #007a4d; /* Verde mais escuro */
+}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4d4d; /* Vermelho */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .privacy-popup {
     display: none;
     position: fixed;
@@ -2016,41 +1885,6 @@ footer p {
     border-top: 1px solid #f5f5f5;
     padding-top: 10px;
 }
-.cta-section {
-    text-align: center;
-    margin: 20px auto;
-    padding: 20px 10px; /* Reduz o padding para menos espaço interno */
-    background: var(--accent-color);
-    color: #fff;
-    border-radius: 8px; /* Borda arredondada um pouco menor */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra mais leve */
-    max-width: 600px; /* Reduz a largura máxima */
-}
-
-.cta-section h3 {
-    margin-bottom: 15px;
-    font-size: 1.6rem; /* Reduz o tamanho da fonte do título */
-}
-
-.cta-section p {
-    margin-bottom: 20px;
-    font-size: 1.2rem; /* Reduz o tamanho da fonte do parágrafo */
-}
-
-.cta-section a {
-    color: #fff;
-    background: var(--primary-color);
-    padding: 10px 20px; /* Reduz o padding do botão */
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 1.2rem; /* Reduz o tamanho da fonte do botão */
-    transition: background 0.3s, transform 0.3s;
-}
-
-.cta-section a:hover {
-    background: var(--hover-color);
-    transform: scale(1.05);
-}
 
 .social-links i {
     font-size: 1.5rem;
@@ -2096,6 +1930,52 @@ footer p {
     text-shadow: none;
 }
 
+
+@media screen and (max-width: 768px) {
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="date"],
+    .form-group textarea {
+        width: calc(100% - 20px); /* Ajuste de largura para telas menores */
+    }
+}
+
+/* Estilos para telas ainda menores */
+@media screen and (max-width: 600px) {
+    .form-group label {
+        font-size: 14px; /* Reduzir o tamanho da fonte das etiquetas */
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="date"],
+    .form-group textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px; 
+        transition: border-color 0.3s ease;
+    }
+
+    button[type="submit"] {
+        font-size: 14px; /* Reduzir o tamanho da fonte do botão */
+    }
+}
+
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    .music {
+        left: 10px;
+        right: 10px;
+        border-radius: 20px;
+        padding: 8px;
+    }
+
+    .music-title {
+        font-size: 12px;
+    }
+}
 
 @media screen and (max-width: 768px) {
     .logo {
