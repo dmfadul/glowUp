@@ -132,6 +132,7 @@ nav ul li {
 
 }
 
+<<<<<<< HEAD
 #premium-btn {
     background: linear-gradient(45deg, #002419, #008f5f, #57d399);
     color: #ffffff;
@@ -143,6 +144,36 @@ nav ul li {
     text-transform: uppercase;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     cursor: pointer;
+=======
+#login-btn{
+    border: 2px solid   #009985;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#login-btn:hover{
+    background-color:  #002413d0;
+    color: white;
+
+}
+
+
+#contato-btn{
+    border: 2px solid   #009985;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#contato-btn:hover{
+    background-color:  #002413d0;
+    color: white;
+
+}
+
+.nav-links a:hover {
+    color: var(--hover-color);
+    transform: scale(1.1); /* Efeito de escala no hover */
+>>>>>>> origin/HEAD
 }
 
 .hero {

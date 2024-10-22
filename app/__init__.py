@@ -26,8 +26,11 @@ def create_app():
     app.register_blueprint(contact_bp)
     app.register_blueprint(register_bp)
     app.register_blueprint(premium_bp)
+<<<<<<< HEAD
    
 
+=======
+>>>>>>> origin/HEAD
     
     
 
