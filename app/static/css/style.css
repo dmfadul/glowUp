@@ -543,6 +543,7 @@ button[type="submit"]:hover {
 .btn:hover {
     background-color: #57d399; /* Tom mais escuro de roxo/lilás */
 }
+
 #premium-btn{
     background: linear-gradient(45deg, #002419 ,#008f5f,#57d399); 
     color: #ffffff; /* Cor do texto */
