@@ -140,17 +140,6 @@ nav ul li {
 
 }
 
-#sobre-btn{
-    border: 2px solid   #009985;
-    padding: 10px;
-    border-radius: 20px;
-}
-
-#sobre-btn:hover{
-    background-color:  #002413d0;
-    color: white;
-
-}
 
 #contato-btn{
     border: 2px solid   #009985;
