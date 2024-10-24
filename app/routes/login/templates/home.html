@@ -7,84 +7,77 @@
     <title>Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
         <div class="container">
             <h1 class="logo"><a href="home" class="glow">GLOW-UP</a></h1>
             <nav class="navbar">
-                <ul class="nav-links">
-                    <li><a href="home" id="home-btn">Home</a></li>
+                <ul class="navegacao-primaria">
+                    <li><a href="home">Home</a></li>
                     <li><a href="login">Login</a></li>
                     <li><a href="contato">Contato</a></li>
-                    <li><a href="premium" id="premium-btn">Seja Premium</a></li>
+                    <li><a href="premium" class="premium-btn">Seja Premium</a></li>
                 </ul>
+                <i class="fa-solid fa-bars" id="hamburger-icon"></i>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="carousel-background">
-                <div class="carousel-slide">
-                    <img src="{{ url_for('static', filename='imagem1.jpg') }}" alt="Minha Imagem">
-                    <img src="{{ url_for('static', filename='imagem2.jpg') }}" alt="Minha Imagem">
-                    <img src="{{ url_for('static', filename='imagem3.jpg') }}" alt="Minha Imagem">
-                    <img src="{{ url_for('static', filename='imagem4.jpg') }}" alt="Minha Imagem">
-                    <img src="{{ url_for('static', filename='imagem5.jpg') }}" alt="Minha Imagem">
-                    <img src="{{ url_for('static', filename='imagem6.jpg') }}" alt="Minha Imagem">
-                    <img src="{{ url_for('static', filename='imagem7.png') }}" alt="Minha Imagem">
-                    <img src="{{ url_for('static', filename='imagem8.jpg') }}" alt="Minha Imagem">
-                    <img src="{{ url_for('static', filename='imagem9.jpg') }}" alt="Minha Imagem">
+    <section class="hero">
+        <div class="carousel-background">
+            <div class="carousel-slide">
+                <img src="{{ url_for('static', filename='img/imagem1.jpg') }}" alt="Minha Imagem">
+                <img src="{{ url_for('static', filename='img/imagem2.jpg') }}" alt="Minha Imagem">
+                <img src="{{ url_for('static', filename='img/imagem3.jpg') }}" alt="Minha Imagem">
+                <img src="{{ url_for('static', filename='img/imagem4.jpg') }}" alt="Minha Imagem">
+                <img src="{{ url_for('static', filename='img/imagem5.jpg') }}" alt="Minha Imagem">
+                <img src="{{ url_for('static', filename='img/imagem6.jpg') }}" alt="Minha Imagem">
+                <img src="{{ url_for('static', filename='img/imagem7.png') }}" alt="Minha Imagem">
+                <img src="{{ url_for('static', filename='img/imagem8.jpg') }}" alt="Minha Imagem">
+                <img src="{{ url_for('static', filename='img/imagem9.jpg') }}" alt="Minha Imagem">
+            </div>
+        </div>
+    </section>
+    <section class="services">
+        <div>
+            <h2>Nossos Serviços</h2>
+            <div class="service-boxes">
+                <div class="service-box">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Musculação</h3>
+                    <p>Treinamentos personalizados para atingir seus objetivos de forma eficiente e segura.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-apple-alt"></i>
+                    <h3>Nutrição</h3>
+                    <p>Planos alimentares adaptados às suas necessidades e metas de saúde.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-thermometer-half"></i>
+                    <h3>Fisioterapia</h3>
+                    <p>Tratamentos especializados para recuperação e manutenção da saúde física.</p>
                 </div>
             </div>
-<<<<<<< HEAD
-=======
-            <!--
-            <div class="content">
-                Bem-vindo a GLOW-UP!
-                <p>Descubra como podemos ajudar você a ter uma vida saudável e equilibrada.</p>
-                <a href="register" class="btn-primary">Cadastre-se</a>
-            </div>-->
->>>>>>> origin/HEAD
-        </section>
-        <section class="services">
-            <div>
-                <h2>Nossos Serviços</h2>
-                <div class="service-boxes">
-                    <div class="service-box">
-                        <i class="fas fa-dumbbell"></i>
-                        <h3>Musculação</h3>
-                        <p>Treinamentos personalizados para atingir seus objetivos de forma eficiente e segura.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fas fa-apple-alt"></i>
-                        <h3>Nutrição</h3>
-                        <p>Planos alimentares adaptados às suas necessidades e metas de saúde.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fas fa-thermometer-half"></i>
-                        <h3>Fisioterapia</h3>
-                        <p>Tratamentos especializados para recuperação e manutenção da saúde física.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="testimonials">
-            <div>
-                <h2>O que nossos clientes dizem</h2>
-                <div class="testimonial-box">
-                    <p>"O Glow-Up transformou minha saúde e bem-estar. Recomendo a todos!"</p>
-                    <cite>- João Silva</cite>
-                </div>
-                <div class="testimonial-box">
-                    <p>"A equipe é muito profissional e os resultados são incríveis. Estou muito satisfeito."</p>
-                    <cite>- Maria Oliveira</cite>
-                </div>
+    <section class="testimonials">
+        <div>
+            <h2>O que nossos clientes dizem</h2>
+            <div class="testimonial-box">
+                <p>"O Glow-Up transformou minha saúde e bem-estar. Recomendo a todos!"</p>
+                <cite>- João Silva</cite>
             </div>
-        </section>
-    </main>
+            <div class="testimonial-box">
+                <p>"A equipe é muito profissional e os resultados são incríveis. Estou muito satisfeito."</p>
+                <cite>- Maria Oliveira</cite>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-sections">
@@ -92,7 +85,6 @@
                 <h3>Links Rápidos</h3>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Sobre</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#contact">Contato</a></li>
                     <li><a href="#privacy">Política de privacidade | Termos de uso</a></li>
@@ -144,7 +136,20 @@
                 }
             });
         }
+
+        function ativacaoMenu(){
+            const ativaMenu = document.querySelector('.fa-bars');
+            const navMenu = document.querySelector('header .navegacao-primaria')
+
+
+            ativaMenu.addEventListener('click', ()=>{
+                ativaMenu.classList.toggle('fa-x')
+                navMenu.classList.toggle('ativado')
+            })
+        }
+
+        ativacaoMenu()
+        
     </script>
-    
 </body>
 </html>

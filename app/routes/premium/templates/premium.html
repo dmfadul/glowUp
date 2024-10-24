@@ -4,73 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bem-estar</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/premium.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 </head>
 <body>
-    <!-- Navbar -->
     <header>
         <div class="container">
-            <h1 class="logo"> <span class="glow"><a href="home">GLOW-UP </a> </span></h1>
+            <h1 class="logo"><a href="home" class="glow">GLOW-UP</a></h1>
             <nav class="navbar">
-                <ul class="nav-links">
-                    <li> <a href="home">Home</a></li>
+                <ul class="navegacao-primaria">
+                    <li><a href="home">Home</a></li>
                     <li><a href="login">Login</a></li>
                     <li><a href="contato">Contato</a></li>
-                    <li><a href="premium" id="premium-btn">Seja Premium</a></li>
+                    <li><a href="premium" class="premium-btn">Seja Premium</a></li>
                 </ul>
-                </ul>
+                <i class="fa-solid fa-bars" id="hamburger-icon"></i>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-              <h1 class="hero-title" STYLE="COLOR: #b99d1d;" > SEJA  PREMIUM</h1>
+            <h1 class="hero-title" STYLE="COLOR: #b99d1d;" > SEJA  PREMIUM</h1>
             <h4 class="hero-title" style="color: #1d1900;">Transforme sua jornada de bem-estar sendo nosso cliente premium. Assine hoje e tenha acesso a vários benefícios como planos personalizados, aulas experimentais, promoções e muito mais!  </h4>
             <a href="#" class="btn">Assinar Agora</a>
     </section>
 
-    
     <section class="premium-plans">
         <div class="container">
 
-            <div class="plan">
-            <h3>Plano Básico</h3>
-            <p>Ideal para iniciantes.</p>
-            <div class="price">R$ 19,99/mês</div>
-            <div class="features">
-                <ul>
-                    <li>Acesso completo</li>
-                    <li>Suporte prioritário</li>
-                    <li>Consultas exclusivas</li>
-                    <li>planos personalizados</li>
-                </ul>
+            <div class="plan basic-plan">
+                <h3>Plano Básico</h3>
+                <p>Ideal para iniciantes.</p>
+                <div class="price">R$ 19,99/mês</div>
+                <div class="features">
+                    <ul>
+                        <li>Suporte prioritário</li>
+                        <li>Consultas exclusivas</li>
+                        <li>Planos personalizados</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn">Assinar</a>
             </div>
-            <a href="#" class="btn">Assinar</a>
-        </div>
-
-        <div class="plan">
-          
+    
+            <div class="plan advanced-plan">
                 <h3>Plano Avançado</h3>
                 <p>Para quem busca mais.</p>
                 <div class="price">R$ 39,99/mês</div>
                 <div class="features">
                     <ul>
-                       
                         <li>Todos os recursos do Plano Básico</li>
                         <li>Acesso exclusivo a workshops online</li>
                         <li>Sessões individuais com especialistas</li>
                     </ul>
                 </div>
-                <a href="#" class="btn">Assinar </a>
+                <a href="#" class="btn">Assinar</a>
             </div>
-
-            <div class="plan">
+    
+            <div class="plan premium-plan">
                 <h3>Plano Premium</h3>
                 <p>O melhor e mais completo.</p>
                 <div class="price">R$ 69,99/mês</div>
@@ -81,94 +75,84 @@
                         <li>Consultoria personalizada</li>
                     </ul>
                 </div>
-               <a href="#" id="premium-btn">Assinar</a>
+                <a href="#" class="btn">Assinar</a>
             </div>
         </div>
     </section>
-
-    <div class="back-to-top">
-        <a href="#header"><i class="fas fa-chevron-up"></i></a>
-    </div>
-    <div class="music">
-        <audio controls loop>
-            <source src="{{ url_for('static', filename='music1.mp3') }}" type="audio/mpeg">
-            <source src="{{ url_for('static', filename='music2.mp3') }}" type="audio/mpeg">
-            
-            Seu navegador não suporta áudio HTML.
-        </audio>
     
-                <div class="music-controls">
-                    <button onclick="previousTrack()"><i class="fas fa-backward"></i></button>
-                    <button onclick="document.querySelector('audio').play()"><i class="fas fa-play"></i></button>
-                    <button onclick="document.querySelector('audio').pause()"><i class="fas fa-pause"></i></button>
-                    <button onclick="nextTrack()"><i class="fas fa-forward"></i></button>
-                </div>
+
+    <footer>
+        <div class="footer-sections">
+            <div class="footer-section quick-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#privacy">Política de privacidade | Termos de uso</a></li>
+                </ul>
             </div>
-    </div>
-        
-    </div>
-    <!-- Footer Section -->
-</div>
-<footer>
-    <div class="footer-section">
-        <h3>Links Rápidos</h3>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#services">Serviços</a></li>
-            <li><a href="#contact">Contato</a></li>
-        </ul>
-    </div>
-    <div class="footer-section">
-        <h3>Contato</h3>
-        <ul>
-            <li>Email: contato@example.com</li>
-            <li>Telefone: (11) 1234-5678</li>
-            <li>Endereço: Rua Exemplo, 123, São Paulo, SP</li>
-        </ul>
-    </div>
-    <div class="footer-section social-links">
-        <h3>Siga-nos</h3>
-        <a href="mailto:seuemail@example.com" target="_blank"><i class="far fa-envelope"></i></a>
-        <a href="https://chat.whatsapp.com/LVMMf7SKTL23pxjujo2ogy" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-    </div>
-    <BR>
-        <div class="footer-rating">
-            <p>Classificação: <span class="stars">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-            </span></p>
+            <div class="footer-section social-links">
+                <h3>Siga-nos em nossas redes sociais</h3>
+                <a href="mailto:glow.upldmy@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+                <a href="https://chat.whatsapp.com/LVMMf7SKTL23pxjujo2ogy" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-section footer-rating">
+                <p class="classificao">Classificação</p>
+                <div class="stars">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <p class="" id="rating-value"></p> 
+            </div>
         </div>
-    <div class="footer-bottom">
-        &copy; 2024 Glow-Up.
-    </div>
+        <div class="footer-bottom">
+            &copy; 2024 Glow-Up.
+        </div>
+    </footer>
 
-</footer>
-
-<!-- Ícones do FontAwesome -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous">
-
-    // JavaScript para a avaliação de estrelas no rodapé
-    const stars = document.querySelectorAll('.footer-rating .star');
-
-    stars.forEach((star, index) => {
-        star.addEventListener('click', () => {
-            stars.forEach((s, i) => {
-                if (i <= index) {
-                    s.classList.add('checked');
-                } else {
-                    s.classList.remove('checked');
-                }
+    <script>
+        const stars = document.querySelectorAll('.star');
+        const ratingValue = document.getElementById('rating-value');
+        let selectedRating = 0;
+    
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                selectedRating = index + 1;
+                updateStars(selectedRating);
+                ratingValue.textContent = `Você classificou ${selectedRating} estrela(s)`;
             });
         });
-    });
+    
+        function updateStars(rating) {
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
 
-</script>
+        function ativacaoMenu(){
+            const ativaMenu = document.querySelector('.fa-bars');
+            const navMenu = document.querySelector('header .navegacao-primaria')
+
+
+            ativaMenu.addEventListener('click', ()=>{
+                ativaMenu.classList.toggle('fa-x')
+                navMenu.classList.toggle('ativado')
+            })
+        }
+
+        ativacaoMenu()
+        
+    </script>
 </div>
 </body>
 </html>

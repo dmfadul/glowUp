@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem-estar</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script>
 </head>
 <body>
-    
     <header>
         <div class="container">
-            <h1 class="logo"><span class="glow"><a href="home">GLOW-UP</a></span></h1>
+            <h1 class="logo"><a href="home" class="glow">GLOW-UP</a></h1>
             <nav class="navbar">
-                <ul class="nav-links">
+                <ul class="navegacao-primaria">
                     <li><a href="home">Home</a></li>
                     <li><a href="login">Login</a></li>
-                    <li><a href="contato" id="contato-btn">Contato</a></li>
-                    <li><a href="premium" id="premium-btn">Seja Premium</a></li>
+                    <li><a href="contato">Contato</a></li>
+                    <li><a href="premium" class="premium-btn">Seja Premium</a></li>
                 </ul>
+                <i class="fa-solid fa-bars" id="hamburger-icon"></i>
             </nav>
         </div>
     </header>
@@ -52,7 +53,6 @@
                 <h3>Links Rápidos</h3>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Sobre</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#contact">Contato</a></li>
                     <li><a href="#privacy">Política de privacidade | Termos de uso</a></li>
@@ -114,6 +114,20 @@
                 }
             });
         }
+
+        function ativacaoMenu(){
+            const ativaMenu = document.querySelector('.fa-bars');
+            const navMenu = document.querySelector('header .navegacao-primaria')
+
+
+            ativaMenu.addEventListener('click', ()=>{
+                ativaMenu.classList.toggle('fa-x')
+                navMenu.classList.toggle('ativado')
+            })
+        }
+
+        ativacaoMenu()
+
     </script>
 </body>
 </html>

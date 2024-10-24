@@ -20,6 +20,41 @@ html, body {
 }
 
 /* Estilos da barra de navegação */
+header .navegacao-primaria li a::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    display: block;
+    border-bottom: 4px solid transparent;
+    transition: .9s;
+}
+
+header .navegacao-primaria li a:hover::after {
+    width: 100%;
+    height: 0px;
+    padding: 0px;
+    border-bottom: 4px solid #2ceb06;
+}
+
+#hamburger-icon {
+    display: none; /* Esconder o ícone de hambúrguer em telas maiores */
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+}
+
+@keyframes inicializar {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 header {
     background-color: var(--primary-color);
     padding: 15px;
@@ -27,7 +62,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 12px var(--shadow-color); /* Sombra mais suave */
+    box-shadow: 0 4px 12px var(--shadow-color); 
     transition: background-color 0.3s;
    
 }
@@ -43,8 +78,8 @@ header {
     font-size: 32px;
     font-weight: bold;
     color: #57d399;
-    text-align: center; /* Centraliza o texto da logo */
-    margin-bottom: 15px; /* Espaço entre a logo e a navegação */
+    text-align: center; 
+    margin-bottom: 15px; 
 }
 
 .logo span {
@@ -56,6 +91,7 @@ header {
     background: linear-gradient(45deg,#00a753, #5fffca, #57d399, #ffffc4);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    background-clip: text;
     font-weight: bold;
 }
 
@@ -78,7 +114,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center; /* Centraliza os itens da lista horizontalmente */
+    justify-content: center; 
     align-items: center;
 }
 
@@ -92,31 +128,31 @@ nav ul li {
     transition: color 0.3s ease, transform 0.3s ease; 
     padding: 10px 15px;
     display: block;
-    border-radius: 5px;
+    border-radius: 30px;
 }
 
 .nav-links a:hover {
     color: var(--hover-color);
-    transform: scale(1.1); /* Efeito de escala no hover */
+    transform: scale(1.1); 
 }
 
 #home-btn {
-    background-color: var(--primary-color); /* Cor de fundo principal */
-    color: var(--secondary-color); /* Cor do texto */
-    border: 2px solid var(--primary-color); /* Borda com a cor principal */
-    padding: 10px 20px; /* Espaçamento interno */
-    border-radius: 25px; /* Cantos arredondados */
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: bold; /* Peso da fonte */
-    text-transform: uppercase; /* Transformação do texto */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transições */
-    cursor: pointer; /* Cursor de ponteiro */
+    background-color: var(--primary-color); 
+    color: var(--secondary-color); 
+    border: 2px solid var(--primary-color);
+    padding: 10px 20px; 
+    border-radius: 25px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; 
+    cursor: pointer; 
 }
 
 #home-btn:hover {
-    background-color: var(--hover-color); /* Cor de fundo no hover */
-    color: var(--primary-color); /* Cor do texto no hover */
-    transform: scale(1.05); /* Efeito de escala no hover */
+    background-color: var(--hover-color); 
+    color: var(--primary-color); 
+    transform: scale(1.05); 
 }
 
 #home-btn {
@@ -131,7 +167,7 @@ nav ul li {
 
 }
 
-#premium-btn {
+.premium-btn {
     background: linear-gradient(45deg, #002419, #008f5f, #57d399);
     color: #ffffff;
     border: 2px solid #57d399;
@@ -144,39 +180,6 @@ nav ul li {
     cursor: pointer;
 }
 
-.hero {
-    background-color: var(--background-color);
-    padding: 0px 0px; 
-    display: flex;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    color: var(--text-color);
-}
-
-.carousel-background {
-    position: relative;
-    width: 100%;
-    height: 65vh; /* Alterado para ocupar toda a altura da tela */
-    overflow: hidden;
-}
-
-.carousel-slide {
-    display: flex;
-    width: 100%; /* Alterado para 300% para exibir 3 imagens lado a lado */
-    height: 100%; /* Adicionado para manter o tamanho do carrossel */
-    animation: slide 50s infinite;
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: 100%; /* Alterado para manter a proporção */
-    object-fit: cover;
-}
-
-
-
 @keyframes slide {
     100% {
         transform: translateX(100%);
@@ -187,11 +190,10 @@ nav ul li {
 }
 
 /* Login */
-
 .content {
     background: #fff;
-    padding: 40px;
-    margin: 200px auto 47px; /* Ajustado para compensar o header fixo */
+    padding: 50px;
+    margin: 200px auto 47px;
     border-radius: 25px;
     max-width: 800px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -219,23 +221,23 @@ legend {
 }
 
 button[type="submit"] {
-    background-color: #57d399; /* Cor de fundo principal */
-    color: white; /* Cor do texto */
-    border: none; /* Sem borda */
-    padding: 10px 20px; /* Espaçamento interno */
-    border-radius: 25px; /* Cantos arredondados */
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: bold; /* Peso da fonte */
-    text-transform: lowercase; /* Transformação do texto */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições */
-    cursor: pointer; /* Cursor de ponteiro */
+    background-color: #57d399; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: lowercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer; 
     text-decoration: none;
 }
 
 button[type="submit"]:hover {
-    background-color: #007c6c; /* Cor de fundo no hover */
+    background-color: #007c6c;
     color: #57d399;
-    transform: scale(1.05); /* Efeito de escala no hover */
+    transform: scale(1.05);
     
 }
 
@@ -277,10 +279,10 @@ button[type="submit"]:hover {
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    border-color: #00a859; /* Verde escuro */
+    border-color: #00a859;
     outline: none;
     box-shadow: 0 0 8px rgba(0, 168, 89, 0.5);
-    background-color: #eafaf1; /* Verde claro */
+    background-color: #eafaf1; 
 }
 
 .form-group input:not(:placeholder-shown) + label,
@@ -289,7 +291,7 @@ button[type="submit"]:hover {
     top: -30px;
     left: 10px;
     font-size: 0.85em;
-    color: #00a859; /* Verde escuro */
+    color: #00a859;
 }
 
 @keyframes fadeIn {
@@ -427,11 +429,164 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #00301c, #009148, #57d399, #e4d58c);
-    
+    background: linear-gradient(45deg, #00301c, #009148, #57d399, #e4d58c); 
 }
 
 ::-webkit-scrollbar-track {
     background-color: #E0E0E0;
+}
+
+@media (max-width: 768px) {
     
+    .logo {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+
+    .service-boxes {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .service-box {
+        max-width: 100%;
+    }
+    
+    
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+   
+    header {
+        justify-content: space-between;
+        padding: 30px 70px;
+    }
+
+    header .navegacao-primaria {
+        display: none;
+    }
+
+    header i {
+        color: #f7f7f7;
+        font-size: 3rem;
+    }
+
+    header .navegacao-primaria.ativado {
+        background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
+        position: absolute;
+        display: grid;
+        top: 80px;
+        color: white;
+        z-index: 1;
+        padding: 30px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 0 0 4px 4px;
+        right: 20px;
+        animation: sobeSecao .8s ease-in-out forwards;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+        margin: 0 8px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    #home-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .service-boxes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .service-box {
+        max-width: 100%;
+    }
+
+    .footer-sections {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 15px;
+    }
+
+    .social-links {
+        margin-top: 20px;
+    }
+
+    .stars {
+        justify-content: center;
+    }
+}
+
+@media(max-width: 375px) {
+    
+    header {
+        justify-content: space-between;
+        padding: 30px 70px;
+    }
+
+    header .navegacao-primaria {
+        display: none;
+    }
+
+    header i {
+        color: #f7f7f7;
+        font-size: 3rem;
+    }
+
+    header .navegacao-primaria.ativado {
+        background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
+        position: absolute;
+        display: grid;
+        top: 80px;
+        color: white;
+        z-index: 1;
+        padding: 30px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 0 0 4px 4px;
+        right: 20px;
+        animation: sobeSecao .8s ease-in-out forwards;
+    }
+
+    .navbar a {
+        font-size: 0.85rem;
+    }
+
+    .footer-sections {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .services h2 {
+        font-size: 1.8rem;
+    }
+
+    .testimonial-box {
+        max-width: 90%;
+        padding: 15px;
+    }
 }
