@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CADASTRO</title>
+    <meta name="description" content="Glow-Up ajuda você a ter uma vida saudável e equilibrada com musculação, nutrição e fisioterapia.">
+    <title>Cadastro</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -88,7 +89,6 @@
                 <h3>Links Rápidos</h3>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Sobre</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#contact">Contato</a></li>
                     <li><a href="#privacy">Política de privacidade | Termos de uso</a></li>
@@ -119,18 +119,23 @@
     </footer>
 
     <script>
+        /*Sistema de Classificação*/
         const stars = document.querySelectorAll('.star');
         const ratingValue = document.getElementById('rating-value');
         let selectedRating = 0;
-    
-        stars.forEach((star, index) => {
-            star.addEventListener('click', () => {
-                selectedRating = index + 1;
-                updateStars(selectedRating);
-                ratingValue.textContent = `Você classificou ${selectedRating} estrela(s)`;
+
+        function initRatingSystem() {
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    selectedRating = index + 1;
+                    updateStars(selectedRating);
+                    if (ratingValue) {
+                        ratingValue.textContent = `Você classificou ${selectedRating} estrela(s)`;
+                    }
+                });
             });
-        });
-    
+        }
+
         function updateStars(rating) {
             stars.forEach((star, index) => {
                 if (index < rating) {
@@ -141,19 +146,47 @@
             });
         }
 
-        function ativacaoMenu(){
+        /* Menu do site */
+        function initMenuSystem() {
+            const hamburger = document.getElementById('hamburger-icon');
+            const nav = document.querySelector('nav');
             const ativaMenu = document.querySelector('.fa-bars');
-            const navMenu = document.querySelector('header .navegacao-primaria')
+            const navMenu = document.querySelector('header .navegacao-primaria');
 
+            if (hamburger && nav) {
+                hamburger.addEventListener('click', () => {
+                    nav.classList.toggle('active');
+                });
+            }
+            
+            if (ativaMenu && navMenu) {
+                ativaMenu.addEventListener('click', () => {
+                    ativaMenu.classList.toggle('fa-x');
+                    navMenu.classList.toggle('ativado');
+                });
+            }
 
-            ativaMenu.addEventListener('click', ()=>{
-                ativaMenu.classList.toggle('fa-x')
-                navMenu.classList.toggle('ativado')
-            })
+            document.addEventListener('click', (e) => {
+                if (nav && !nav.contains(e.target) && 
+                    hamburger && !hamburger.contains(e.target)) {
+                    nav.classList.remove('active');
+                }
+                
+                if (navMenu && !navMenu.contains(e.target) && 
+                    ativaMenu && !ativaMenu.contains(e.target)) {
+                    navMenu.classList.remove('ativado');
+                    if (ativaMenu.classList.contains('fa-x')) {
+                        ativaMenu.classList.remove('fa-x');
+                    }
+                }
+            });
         }
 
-        ativacaoMenu()
-        
+        document.addEventListener('DOMContentLoaded', () => {
+            initRatingSystem();
+            initMenuSystem();
+        });
+
     </script>
 </body>
 </html>

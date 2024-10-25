@@ -66,6 +66,7 @@ header {
     transition: background-color 0.3s;
    
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -193,7 +194,7 @@ nav ul li {
 .content {
     background: #fff;
     padding: 50px;
-    margin: 200px auto 47px;
+    margin: 210px auto 47px;
     border-radius: 25px;
     max-width: 800px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -436,11 +437,42 @@ footer {
     background-color: #E0E0E0;
 }
 
-@media (max-width: 768px) {
-    
+/* Large Screens (Notebooks/Desktops) */
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
     .logo {
-        font-size: 24px;
-        margin-bottom: 10px;
+        font-size: 32px;
+    }
+
+    nav ul {
+        gap: 25px;
+    }
+
+    .content {
+        padding: 60px;
+        margin: 210px auto 47px;
+        max-width: 1000px;
+    }
+}
+
+/* Medium Screens (Tablets and Small Notebooks) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 90%;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    nav ul {
+        gap: 15px;
     }
 
     .navbar a {
@@ -448,92 +480,74 @@ footer {
         margin: 0 10px;
     }
 
-    .service-boxes {
-        flex-direction: column;
-        gap: 15px;
+    .content {
+        padding: 40px;
+        margin: 180px auto 40px;
+        max-width: 90%;
     }
 
-    .service-box {
-        max-width: 100%;
-    }
-    
-    
-    .footer-sections {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-
-@media (max-width: 480px) {
-   
-    header {
-        justify-content: space-between;
-        padding: 30px 70px;
-    }
-
-    header .navegacao-primaria {
-        display: none;
-    }
-
-    header i {
-        color: #f7f7f7;
-        font-size: 3rem;
-    }
-
-    header .navegacao-primaria.ativado {
-        background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
-        position: absolute;
-        display: grid;
-        top: 80px;
-        color: white;
-        z-index: 1;
-        padding: 30px;
-        font-size: 1.6rem;
-        font-weight: bold;
-        border-radius: 0 0 4px 4px;
-        right: 20px;
-        animation: sobeSecao .8s ease-in-out forwards;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-
-    .navbar a {
-        font-size: 0.9rem;
-        margin: 0 8px;
-    }
-
-    header {
-        padding: 10px;
-    }
-
-    #home-btn {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-
-    .service-boxes {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .service-box {
-        max-width: 100%;
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 12px;
     }
 
     .footer-sections {
-        flex-direction: column;
-        text-align: center;
+        padding: 0 20px;
+        gap: 20px;
     }
 
     .footer-section {
-        margin-bottom: 15px;
+        flex: 1;
+    }
+}
+
+/* Small Tablets and Large Phones */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
     }
 
-    .social-links {
-        margin-top: 20px;
+    header {
+        padding: 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 0.95rem;
+        margin: 0 8px;
+    }
+
+    .content {
+        padding: 30px;
+        margin: 160px auto 30px;
+        max-width: 95%;
+    }
+
+    .footer-sections {
+        flex-direction: column;
+        gap: 25px;
+        padding: 0 15px;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .quick-links, .footer-rating {
+        text-align: center;
     }
 
     .stars {
@@ -541,8 +555,8 @@ footer {
     }
 }
 
-@media(max-width: 375px) {
-    
+/* Mobile Phones */
+@media screen and (max-width: 480px) {
     header {
         justify-content: space-between;
         padding: 30px 70px;
@@ -571,22 +585,90 @@ footer {
         right: 20px;
         animation: sobeSecao .8s ease-in-out forwards;
     }
+    
+    .container {
+        padding: 0 10px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    #hamburger-icon {
+        display: block;
+    }
+
+    .logo {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 20px;
+        gap: 15px;
+    }
 
     .navbar a {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
+        margin: 5px 0;
+        padding: 8px 12px;
+    }
+
+    .content {
+        padding: 20px;
+        margin: 140px auto 20px;
+        max-width: 100%;
+        border-radius: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 10px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 12px;
     }
 
     .footer-sections {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+        padding: 0 10px;
     }
 
-    .services h2 {
-        font-size: 1.8rem;
+    .footer-section {
+        margin-bottom: 15px;
     }
 
-    .testimonial-box {
-        max-width: 90%;
-        padding: 15px;
+    .footer-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .social-links a {
+        font-size: 1.4rem;
+    }
+
+    .stars .star {
+        font-size: 1.5rem;
     }
 }
+
+
+

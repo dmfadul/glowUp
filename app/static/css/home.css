@@ -49,16 +49,11 @@ header {
    
 }
 
-@keyframes inicializar {
-    from {
-        opacity: 0;
-        transform: translate3d(0, -60px, 0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
+#hamburger-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
 }
 
 .container {
@@ -159,8 +154,6 @@ nav ul li {
 #home-btn:hover{
     background-color:  #002413d0;
     color: white;
-    
-
 }
 
 .premium-btn {
@@ -177,7 +170,7 @@ nav ul li {
 }
 
 .hero {
-    margin-top: 235px;
+    margin-top: 220px;
     margin-bottom: 0px;
     height: 530px;
     background-color: var(--background-color);
@@ -205,15 +198,6 @@ nav ul li {
     width: 90%;
     height: 90%; 
     object-fit: cover;
-}
-
-@keyframes slide {
-    100% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-150%);
-    }
 }
 
 /* Services Section */
@@ -433,36 +417,140 @@ footer {
     
 }
 
-@media (max-width: 768px) {
-    
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-150%);
+    }
+}
+
+
+/* Notebooks/Desktops */
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        margin-top: 185px;
+        margin-bottom: 0px;
+    }
+
     .logo {
-        font-size: 24px;
-        margin-bottom: 10px;
+        font-size: 32px;
+    }
+
+    nav ul {
+        gap: 25px;
+    }
+
+    .content {
+        padding: 60px;
+        margin: 210px auto 47px;
+        max-width: 1000px;
+    }
+}
+
+/* Tablets and Small Notebooks */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 90%;
+        padding: 0 20px;
+    }
+    
+    
+
+    .logo {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    nav ul {
+        gap: 15px;
     }
 
     .navbar a {
         font-size: 1rem;
         margin: 0 10px;
     }
-   
-    .service-boxes {
-        flex-direction: column;
-        gap: 15px;
+
+    .footer-sections {
+        padding: 0 20px;
+        gap: 20px;
     }
 
-    .service-box {
-        max-width: 100%;
-    }
-    
-    
-    .footer-sections {
-        flex-direction: column;
-        align-items: center;
+    .footer-section {
+        flex: 1;
     }
 }
 
 
-@media (max-width: 480px) {
+/* Tablets e Celulares */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    header {
+        padding: 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }  
+
+    .navbar a {
+        font-size: 0.95rem;
+        margin: 0 8px;
+    }
+
+    .footer-sections {
+        flex-direction: column;
+        gap: 25px;
+        padding: 0 15px;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .quick-links, .footer-rating {
+        text-align: center;
+    }
+
+    .stars {
+        justify-content: center;
+    }
+
+}
+
+/* Celulares */
+@media screen and (max-width: 480px) {
    
     header {
         justify-content: space-between;
@@ -476,6 +564,10 @@ footer {
     header i {
         color: #f7f7f7;
         font-size: 3rem;
+    }
+
+    #hamburger-icon {
+        display: block;
     }
 
     header .navegacao-primaria.ativado {
@@ -502,6 +594,27 @@ footer {
         margin: 0 8px;
     }
 
+    .hero {
+        margin-top: 120px;
+        margin-bottom: 0px;
+    }
+    
+    nav ul {
+        display: none;
+    }
+
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 20px;
+        gap: 15px;
+    }
+
     header {
         padding: 10px;
     }
@@ -520,11 +633,6 @@ footer {
         max-width: 100%;
     }
 
-    .footer-sections {
-        flex-direction: column;
-        text-align: center;
-    }
-
     .footer-section {
         margin-bottom: 15px;
     }
@@ -536,24 +644,39 @@ footer {
     .stars {
         justify-content: center;
     }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .footer-sections {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
+   
+    .footer-section {
+        margin-bottom: 15px;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .social-links a {
+        font-size: 1.4rem;
+    }
+
+    .classificao{
+        position: relative;
+        right: 120px;
+    }
 }
 
-@media(max-width: 375px) {
-    
-    header {
-        justify-content: space-between;
-        padding: 30px 70px;
-    }
 
-    header .navegacao-primaria {
-        display: none;
-    }
-
-    header i {
-        color: #f7f7f7;
-        font-size: 3rem;
-    }
-
+/* Celulares */
+@media screen and (max-width: 374px) {
     header .navegacao-primaria.ativado {
         background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
         position: absolute;
@@ -567,6 +690,44 @@ footer {
         border-radius: 0 0 4px 4px;
         right: 20px;
         animation: sobeSecao .8s ease-in-out forwards;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    #hamburger-icon {
+        display: block;
+    }
+
+    .logo {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .hero {
+        margin-top: 120px;
+        margin-bottom: 0px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 20px;
+        gap: 15px;
     }
 
     .navbar a {
@@ -586,4 +747,28 @@ footer {
         max-width: 90%;
         padding: 15px;
     }
+
+    .content {
+        padding: 15px;
+        margin: 120px auto 15px;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .social-links a {
+        font-size: 1.3rem;
+        margin: 0 8px;
+    }
+
+    .classificao{
+        position: relative;
+        right: 95px;
+    }
+    
 }

@@ -37,6 +37,13 @@ header .navegacao-primaria li a:hover::after {
     border-bottom: 4px solid #2ceb06;
 }
 
+#hamburger-icon {
+    display: none; /* Esconder o ícone de hambúrguer em telas maiores */
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+}
+
 @keyframes inicializar {
     from {
         opacity: 0;
