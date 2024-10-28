@@ -51,7 +51,7 @@ header .navegacao-primaria li a:hover::after {
 }
 
 #hamburger-icon {
-    display: none; /* Esconder o ícone de hambúrguer em telas maiores */
+    display: none; 
     cursor: pointer;
     font-size: 24px;
     color: #fff;
@@ -463,6 +463,41 @@ footer {
     z-index: 2;
 }
 
+@media (max-width: 1024px) {
+    
+    .logo {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+   
+    .navbar a {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+
+    .hero {
+        margin-top: 140px;
+        margin-bottom: 0px;
+    }
+    
+    .footer-sections {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1700px;
+        margin-bottom: 20px;
+    }
+    
+    .plan {
+        max-width: 400px;
+        max-height: 400px;
+        min-height: 400px;
+        min-width: 400px;
+    }
+    
+}
+
 @media (max-width: 768px) {
     
     .logo {
@@ -476,34 +511,30 @@ footer {
         margin: 0 10px;
     }
 
-   
-    .service-boxes {
-        flex-direction: column;
-        gap: 15px;
+    .hero {
+        margin-top: 140px;
+        margin-bottom: 0px;
     }
-
-    .service-box {
-        max-width: 100%;
-    }
-    
     
     .footer-sections {
-        flex-direction: column;
-        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1700px;
+        margin-bottom: 20px;
     }
-
-    .premium-plans .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
+    
     .plan {
-        max-width: 100%;
+        max-width: 300px;
+        max-height: 300px;
+        min-height: 300px;
+        min-width: 300px;
     }
+    
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 425px) {
    
     header {
         justify-content: space-between;
@@ -517,6 +548,10 @@ footer {
     header i {
         color: #f7f7f7;
         font-size: 3rem;
+    }
+
+    .container {
+        padding: 0 10px;
     }
 
     header .navegacao-primaria.ativado {
@@ -538,9 +573,35 @@ footer {
         font-size: 20px;
     }
 
+    #hamburger-icon {
+        display: block;
+    }
+
+    .hero {
+        margin-top: 100px;
+    }
+
     .navbar a {
         font-size: 0.9rem;
-        margin: 0 8px;
+        margin: 5px 0;
+        padding: 8px 12px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 20px;
+        gap: 15px;
     }
 
     header {
@@ -584,7 +645,134 @@ footer {
         min-height: 300px;
         min-width: 300px;
     }
+
+    .classificao {
+        right: 145px;
+    }
 }
+
+
+@media (max-width: 375px) {
+   
+    header {
+        justify-content: space-between;
+        padding: 30px 70px;
+    }
+
+    header .navegacao-primaria {
+        display: none;
+    }
+
+    header i {
+        color: #f7f7f7;
+        font-size: 3rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    header .navegacao-primaria.ativado {
+        background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
+        position: absolute;
+        display: grid;
+        top: 80px;
+        color: white;
+        z-index: 1;
+        padding: 30px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 0 0 4px 4px;
+        right: 20px;
+        animation: sobeSecao .8s ease-in-out forwards;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    #hamburger-icon {
+        display: block;
+    }
+
+    .hero {
+        margin-top: 100px;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+        margin: 5px 0;
+        padding: 8px 12px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 20px;
+        gap: 15px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    #home-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .service-boxes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .service-box {
+        max-width: 100%;
+    }
+
+    .footer-sections {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 15px;
+    }
+
+    .social-links {
+        margin-top: 20px;
+    }
+
+    .stars {
+        justify-content: center;
+    }
+
+    .plan {
+        max-width: 300px;
+        max-height: 300px;
+        min-height: 300px;
+        min-width: 300px;
+    }
+
+    .premium-plans {
+        padding: 0;
+    }
+
+    .classificao {
+        right: 120px;
+    }
+}
+
 
 
 @media(max-width: 320px) {
@@ -679,6 +867,18 @@ footer {
 
     .stars .star {
         font-size: 1.5rem;
+    }
+
+    .premium-plans {
+        padding: 0;
+    }
+
+    .classificao {
+        right: 113px;
+    }
+
+    footer {
+        width: 100%;
     }
 
 }

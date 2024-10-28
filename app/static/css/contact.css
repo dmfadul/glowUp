@@ -43,18 +43,6 @@ header .navegacao-primaria li a:hover::after {
     color: #fff;
 }
 
-@keyframes inicializar {
-    from {
-        opacity: 0;
-        transform: translate3d(0, -60px, 0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
-
 header {
     background-color: var(--primary-color);
     padding: 15px;
@@ -284,15 +272,6 @@ button[type="submit"]:hover {
     color: #00a859; 
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 /* Rodapé */
 footer {
     background-color: var(--primary-color);
@@ -426,6 +405,27 @@ footer {
 ::-webkit-scrollbar-track {
     background-color: #E0E0E0;
     
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-150%);
+    }
 }
 
 /* Large Screens (Notebooks/Desktops) */
@@ -664,6 +664,15 @@ footer {
     .stars .star {
         font-size: 1.5rem;
     }
+
+    .stars {
+        justify-content: center;
+    }
+
+    .classificao{
+        position: relative;
+        right: 145px;
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -710,8 +719,86 @@ footer {
     }
 
     .content {
-        padding: 15px;
-        margin: 120px auto 15px;
+        width: 100%;
+        max-width: 400px; /* Define uma largura máxima para o formulário */
+        padding: 20px;
+    }
+
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+
+    footer {
+        width: 100%;
+    }
+    .social-links a {
+        font-size: 1.3rem;
+        margin: 0 8px;
+    }
+
+    .stars {
+        justify-content: center;
+    }
+
+    .classificao{
+        position: relative;
+        right: 140px;
+    }
+    
+}
+
+@media screen and (max-width: 320px) {
+    header {
+        justify-content: space-between;
+        padding: 30px 70px;
+    }
+
+    header .navegacao-primaria {
+        display: none;
+    }
+
+    header i {
+        color: #f7f7f7;
+        font-size: 3rem;
+    }
+
+    header .navegacao-primaria.ativado {
+        background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
+        position: absolute;
+        display: grid;
+        top: 80px;
+        color: white;
+        z-index: 1;
+        padding: 30px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 0 0 4px 4px;
+        right: 20px;
+        animation: sobeSecao .8s ease-in-out forwards;
+    }
+    
+    header {
+        padding: 8px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .navbar a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 400px; /* Define uma largura máxima para o formulário */
+        padding: 20px;
     }
 
     .form-group label {
@@ -722,9 +809,22 @@ footer {
         font-size: 1.1rem;
     }
 
+    footer {
+        width: 100%;
+    }
+
     .social-links a {
         font-size: 1.3rem;
         margin: 0 8px;
+    }
+
+    .stars {
+        justify-content: center;
+    }
+
+    .classificao{
+        position: relative;
+        right: 115px;
     }
     
 }

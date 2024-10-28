@@ -26,62 +26,61 @@
         </div>
     </header>
     
-    <main>
-        <section class="content">
-            <h1>CADASTRE-SE</h1>
-            <fieldset>
-                <legend>Dados pessoais</legend>
-                <form action="#" method="post" id="loginForm">
+    <section class="content">
+        <h1>CADASTRE-SE</h1>
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            <form action="#" method="post" id="loginForm">
+                <div class="form-group">
+                    <label for="username">Nome completo:</label>
+                    <input type="text" id="username" name="username" placeholder="ex.: Maria da Silva" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-phone">Telefone:</label>
+                    <input type="text" id="contact-phone" name="contact-phone" placeholder="ex.: (41) 9 1234-4321" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="ex.: mariadasilva@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Crie sua senha:</label>
+                    <input type="password" id="password" name="password" placeholder="ex.: 123@M75" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmapassword">Confirme sua senha:</label>
+                    <input type="password" id="confirmapassword" name="confirmapassword" placeholder="ex.: 123@M75" required>
+                </div>
+                <fieldset>
+                    <legend>Informações Complementares</legend>
                     <div class="form-group">
-                        <label for="username">Nome completo:</label>
-                        <input type="text" id="username" name="username" placeholder="ex.: Maria da Silva" required>
+                        <label for="doencas">Comorbidades/Doenças:</label>
+                        <input type="text" id="doencas" name="doencas" placeholder="ex.: Possuo asma, diabete, hérnia de disco">
                     </div>
                     <div class="form-group">
-                        <label for="contact-phone">Telefone:</label>
-                        <input type="text" id="contact-phone" name="contact-phone" placeholder="ex.: (41) 9 1234-4321" required>
+                        <label for="medicines">Medicamentos em Uso:</label>
+                        <textarea id="medicines" name="medicines" rows="2" placeholder="ex.: Tomo o medicamento x para tratar y, n vezes ao dia" required></textarea>                  
                     </div>
                     <div class="form-group">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" placeholder="ex.: mariadasilva@gmail.com" required>
+                        <label for="allergies">Alergias:</label>
+                        <textarea id="allergies" name="allergies" rows="2" placeholder="ex.: Possuo alergia à tomate e amendoim. Possuo intolerância à lactose" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="password">Crie sua senha:</label>
-                        <input type="password" id="password" name="password" placeholder="ex.: 123@M75" required>
+                        <label for="objetivos">Objetivos:</label>
+                        <select id="objetivos" name="objetivos" required>
+                            <option value="" disabled selected>Selecione seu objetivo</option>
+                            <option value="emagrecer">Emagrecer</option>
+                            <option value="melhorar-condicionamento">Melhorar Condicionamento Físico</option>
+                            <option value="ganhar-massa-muscular">Ganhar Massa Muscular</option>
+                            <option value="definir">Definir</option>
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <label for="confirmapassword">Confirme sua senha:</label>
-                        <input type="password" id="confirmapassword" name="confirmapassword" placeholder="ex.: 123@M75" required>
-                    </div>
-                    <fieldset>
-                        <legend>Informações Complementares</legend>
-                        <div class="form-group">
-                            <label for="doencas">Comorbidades/Doenças:</label>
-                            <input type="text" id="doencas" name="doencas" placeholder="ex.: Possuo asma, diabete, hérnia de disco">
-                        </div>
-                        <div class="form-group">
-                            <label for="medicines">Medicamentos em Uso:</label>
-                            <textarea id="medicines" name="medicines" rows="2" placeholder="ex.: Tomo o medicamento x para tratar y, n vezes ao dia" required></textarea>                  
-                        </div>
-                        <div class="form-group">
-                            <label for="allergies">Alergias:</label>
-                            <textarea id="allergies" name="allergies" rows="2" placeholder="ex.: Possuo alergia à tomate e amendoim. Possuo intolerância à lactose" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="objetivos">Objetivos:</label>
-                            <select id="objetivos" name="objetivos" required>
-                                <option value="" disabled selected>Selecione seu objetivo</option>
-                                <option value="emagrecer">Emagrecer</option>
-                                <option value="melhorar-condicionamento">Melhorar Condicionamento Físico</option>
-                                <option value="ganhar-massa-muscular">Ganhar Massa Muscular</option>
-                                <option value="definir">Definir</option>
-                            </select>
-                        </div>
-                    </fieldset>
-                    <button type="submit" class="submit-btn">Registrar</button>
-                </form>
-            </fieldset>
-        </section>
-    </main>
+                </fieldset>
+                <button type="submit" class="submit-btn">Registrar</button>
+            </form>
+        </fieldset>
+    </section>
+    
     
     <footer>
         <div class="footer-sections">
