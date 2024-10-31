@@ -195,7 +195,7 @@ nav ul li {
     background: #fff;
     padding: 50px;
     margin: 210px auto 47px;
-    border-radius: 25px;
+    border-radius: 10px;
     max-width: 800px;
 
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -203,7 +203,7 @@ nav ul li {
 }
 
 h1 {
-    color: #57d399;
+    color: #4fa289;
     font-size: 2.5em;
     margin-bottom: 30px;
     text-align: center;
@@ -227,7 +227,7 @@ button[type="submit"] {
     color: white; 
     border: none; 
     padding: 10px 20px; 
-    border-radius: 25px;
+    border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
     text-transform: lowercase;
@@ -272,7 +272,7 @@ button[type="submit"]:hover {
     width: 100%;
     padding: 15px;
     border: 1px solid #ddd;
-    border-radius: 16px;
+    border-radius: 10px;
     background: #f9f9f9;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;

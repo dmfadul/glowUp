@@ -179,7 +179,7 @@ nav ul li {
 }
 
 h1 {
-    color: #57d399;
+    color: #4fa289;
     font-size: 2.5em;
     margin-bottom: 30px;
     text-align: center;
@@ -249,7 +249,7 @@ button[type="submit"]:hover {
     width: 80%;
     padding: 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     background: #f9f9f9;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
