@@ -3,7 +3,7 @@ from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
-# login_manager = LoginManager()
+login_manager = LoginManager()
 
 def create_app():
     config_filename = '../instance/config.py'
@@ -13,7 +13,7 @@ def create_app():
 
     db.init_app(app)
     
-    # login_manager.init_app(app)
+    login_manager.init_app(app)
     # login_manager.login_view = 'login.login'
     # login_manager.login_message = 'Please log in to access this page.'
     # login_manager.login_message_category = 'danger'
