@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, request
-
+from flask_login import login_required
 
 premium_bp = Blueprint('premium',
                        __name__,
@@ -9,6 +9,7 @@ premium_bp = Blueprint('premium',
 
 
 @premium_bp.route('/premium', methods=['GET', 'POST'])
+@login_required
 def premium():
     if request.method == 'POST':
         data = request.form

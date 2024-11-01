@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, request
+from flask_login import login_required
 
 
 contact_bp = Blueprint('contact',
@@ -9,6 +10,7 @@ contact_bp = Blueprint('contact',
 
 
 @contact_bp.route('/contato', methods=['GET', 'POST'])
+@login_required
 def contact():
     if request.method == 'POST':
         data = request.form
