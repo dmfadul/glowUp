@@ -13,9 +13,14 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 
     name = db.Column(db.String(100), nullable=False)
+    phone = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(100), nullable=False, unique=True)
     is_admin = db.Column(db.Boolean, default=False)
     password = db.Column(db.Text, nullable=False)
+    comorbidities = db.Column(db.Text, nullable=True)
+    medicines = db.Column(db.Text, nullable=True)
+    allergies = db.Column(db.Text, nullable=True)
+    objectives = db.Column(db.Text, nullable=True)
 
     @classmethod
     def add_entry(cls, name, email, password, is_admin=None):
