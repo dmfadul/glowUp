@@ -31,12 +31,10 @@ def create_app():
     from app.routes.contact.contact import contact_bp
     from app.routes.register.register import register_bp
     from app.routes.premium.premium import premium_bp
-    from app.routes.services.services import services_bp
     app.register_blueprint(login_bp)
     app.register_blueprint(contact_bp)
     app.register_blueprint(register_bp)
     app.register_blueprint(premium_bp)
-    app.register_blueprint(services_bp)
 
     return app
 
