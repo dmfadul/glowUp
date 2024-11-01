@@ -12,13 +12,17 @@ class User(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 
-    username = db.Column(db.String(100), nullable=False, unique=True)
+    name = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), nullable=False, unique=True)
     is_admin = db.Column(db.Boolean, default=False)
     password = db.Column(db.Text, nullable=False)
 
     @classmethod
-    def add_entry(cls, username, password):
-        user = cls(username=username, password=password)
+    def add_entry(cls, name, email, password, is_admin=None):
+        user = cls(name=name,
+                   email=email,
+                   is_admin=is_admin if is_admin else False,
+                   password=password)
         db.session.add(user)
         db.session.commit()
         return user

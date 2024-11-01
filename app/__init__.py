@@ -24,7 +24,7 @@ def create_app():
     
     login_manager.init_app(app)
     login_manager.login_view = 'login.login'
-    login_manager.login_message = 'Please log in to access this page.'
+    login_manager.login_message = 'Por favor, faça o log in para acessar esta página.'
     login_manager.login_message_category = 'danger'
     
     from app.routes.login.login import login_bp

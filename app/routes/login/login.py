@@ -1,5 +1,6 @@
-from flask import Blueprint, render_template, redirect, url_for, request
-from flask_login import login_user, logout_user, login_required
+from flask import Blueprint, render_template, redirect, url_for, request, flash
+from flask_login import login_user, logout_user, login_required, current_user
+from app.models.user import User
 
 
 
@@ -16,18 +17,35 @@ def index():
 
 
 @login_bp.route('/home')
+@login_required
 def home():
     return render_template('home.html')
 
 
+@login_bp.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('login.login'))
+
+
 @login_bp.route('/login', methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('login.home'))
+    
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        print(email, password)
 
-        
+        user = User.query.filter_by(email=email).first()
+        password_is_correct = user.password == password
+
+        if not user or not password_is_correct:
+            flash("Login Inválido", "danger")
+            return redirect(url_for('login.login'))
+
+        login_user(user)
+        print(user.name)
         return redirect(url_for('login.home'))
     
     else:
