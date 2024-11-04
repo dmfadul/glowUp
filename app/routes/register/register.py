@@ -16,9 +16,22 @@ def register():
         
         name = data.get('name')
         phone = data.get('phone')
+        email = data.get('email')
+        password = data.get('password')
+        comorbidities = data.get('comorbidities')
+        medicines = data.get('medicines')
+        allergies = data.get('allergies')
+        objectives = data.get('objectives')
 
         new_user = User.add_entry(name=name,
-                                  phone=phone,)
+                                  phone=phone,
+                                  email=email,
+                                  password=password,
+                                  comorbidities=comorbidities,
+                                  medicines=medicines,
+                                  allergies=allergies,
+                                  objectives=objectives
+                                  )
         
         return redirect(url_for('register.register'))
     else:
