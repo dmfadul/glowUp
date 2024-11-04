@@ -44,8 +44,6 @@ def login():
             flash("Login Inválido", "danger")
             return redirect(url_for('login.login'))
 
-        login_user(user)
-        print(user.name)
         return redirect(url_for('login.home'))
     
     else:

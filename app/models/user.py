@@ -23,11 +23,25 @@ class User(db.Model, UserMixin):
     objectives = db.Column(db.Text, nullable=True)
 
     @classmethod
-    def add_entry(cls, name, email, password, is_admin=None):
+    def add_entry(cls,
+                  name,
+                  phone,
+                  email,
+                  password,
+                  comorbidities,
+                  medicines,
+                  allergies,
+                  objectives,
+                  is_admin=None):
         user = cls(name=name,
+                   phone=phone,
                    email=email,
                    is_admin=is_admin if is_admin else False,
-                   password=password)
+                   password=password,
+                   comorbidities=comorbidities,
+                   medicines=medicines,
+                   allergies=allergies,
+                   objectives=objectives)
         db.session.add(user)
         db.session.commit()
         return user
