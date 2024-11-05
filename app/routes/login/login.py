@@ -42,8 +42,10 @@ def login():
 
         if not user or not password_is_correct:
             flash("Login Inválido", "danger")
+            print("login invalido")
             return redirect(url_for('login.login'))
 
+        login_user(user)
         return redirect(url_for('login.home'))
     
     else:
