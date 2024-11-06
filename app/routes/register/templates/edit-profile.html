@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="home" class="glow">GLOW-UP</a></h1>
+            <nav class="navbar">
+                <ul class="navegacao-primaria">
+                    <li><a href="home">Home</a></li>
+                    <li><a href="contato">Contato</a></li>
+                    <li><a href="premium" class="premium-btn">Seja Premium</a></li>
+                </ul>
+                <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+            </nav>
+        </div>
+    </header>
+
+    <section class="content">
+        <h1>EDITAR PERFIL</h1>
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            <form action="{{ url_for('register.edit_profile') }}" method="post">
+                <div class="form-group">
+                    <label for="name">Nome completo:</label>
+                    <input type="text" id="name" name="name" value="{{ user.name }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefone:</label>
+                    <input type="text" id="phone" name="phone" value="{{ user.phone }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" value="{{ user.email }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Nova senha:</label>
+                    <input type="password" id="password" name="password" placeholder="Deixe em branco para manter a mesma senha">
+                </div>
+                <fieldset>
+                    <legend>Informações Complementares</legend>
+                    <div class="form-group">
+                        <label for="comorbidities">Comorbidades/Doenças:</label>
+                        <input type="text" id="comorbidities" name="comorbidities" value="{{ user.comorbidities }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="medicines">Medicamentos em Uso:</label>
+                        <textarea id="medicines" name="medicines" rows="2">{{ user.medicines }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="allergies">Alergias:</label>
+                        <textarea id="allergies" name="allergies" rows="2">{{ user.allergies }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="objectives">Objetivos:</label>
+                        <select id="objectives" name="objectives">
+                            <option value="" disabled>Selecione seu objetivo</option>
+                            <option value="emagrecer" {% if user.objectives == 'emagrecer' %}selected{% endif %}>Emagrecer</option>
+                            <option value="melhorar-condicionamento" {% if user.objectives == 'melhorar-condicionamento' %}selected{% endif %}>Melhorar Condicionamento Físico</option>
+                            <option value="ganhar-massa-muscular" {% if user.objectives == 'ganhar-massa-muscular' %}selected{% endif %}>Ganhar Massa Muscular</option>
+                            <option value="definir" {% if user.objectives == 'definir' %}selected{% endif %}>Definir</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <button type="submit" class="submit-btn">Salvar Alterações</button>
+            </form>
+            <form action="{{ url_for('register.delete_profile') }}" method="post" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?')">
+                <button type="submit" class="submit-btn" style="background-color: #b22222;">Excluir Conta</button>
+            </form>
+        </fieldset>
+    </section>
+
+    <footer>
+        <!-- Footer content here, as in the original HTML -->
+    </footer>
+</body>
+</html>
