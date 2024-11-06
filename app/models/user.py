@@ -15,6 +15,7 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(100), nullable=False)
     phone = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(100), nullable=False, unique=True)
+    is_active = db.Column(db.Boolean, nullable=False, default=True)
     is_admin = db.Column(db.Boolean, default=False)
     password = db.Column(db.Text, nullable=False)
     comorbidities = db.Column(db.Text, nullable=True)
@@ -45,3 +46,12 @@ class User(db.Model, UserMixin):
         db.session.add(user)
         db.session.commit()
         return user
+
+    def activate(self):
+        self.is_active = True
+        db.session.commit()
+    
+    def deactivate(self):
+        self.is_active = False
+        db.session.commit()
+        
