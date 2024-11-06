@@ -68,7 +68,7 @@ def edit_profile():
 @login_required
 def delete_profile():
     user = User.query.get(current_user.id)
-    db.session.delete(user)
-    db.session.commit()
-    logout_user()  # Log out the user after deletion
+    user.deactivate()
+    logout_user()
+    
     return redirect(url_for('register.register'))
