@@ -1,10 +1,8 @@
 from flask import Flask
-from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
-bcrypt = Bcrypt()
 login_manager = LoginManager()
 
 def create_app():
@@ -15,7 +13,6 @@ def create_app():
     app.secret_key = app.config.get('SECRET_KEY')
 
     db.init_app(app)
-    bcrypt.init_app(app)
 
     @login_manager.user_loader
     def load_user(user_id):
