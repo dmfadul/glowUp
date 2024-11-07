@@ -7,6 +7,10 @@ admin_bp = Blueprint('admin',
                     static_folder='static',
                     static_url_path='/admin/static')
 
+@admin_bp.route('/adm')
+def adm():
+    return render_template('adm.html')
+
 
 @admin_bp.route('/report')
 def report():
