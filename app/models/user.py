@@ -54,4 +54,3 @@ class User(db.Model, UserMixin):
     def deactivate(self):
         self.is_active = False
         db.session.commit()
-        
