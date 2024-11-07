@@ -10,7 +10,6 @@ contact_bp = Blueprint('contact',
 
 
 @contact_bp.route('/contato', methods=['GET', 'POST'])
-@login_required
 def contact():
     if request.method == 'POST':
         data = request.form
