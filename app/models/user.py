@@ -54,3 +54,24 @@ class User(db.Model, UserMixin):
     def deactivate(self):
         self.is_active = False
         db.session.commit()
+
+    @classmethod
+    def gen_report(cls):
+        users = cls.query.all()
+
+        output = []
+        for user in users:
+            if not user.is_active:
+                continue
+
+            output.append([
+                user.name,
+                user.phone,
+                user.email,
+                user.comorbidities,
+                user.medicines,
+                user.allergies,
+                user.objectives
+            ])
+
+        return output

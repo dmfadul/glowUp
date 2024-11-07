@@ -1,1 +1,20 @@
-reportttt
+
+<table>
+    <thead>
+        <th>Nome</th>
+        <th>phone</th>
+        <th>Email</th>
+        <th>Comorbidades</th>
+        <th>Medicamentos</th>
+        <th>Alergias</th>
+    </thead>
+    <tbody>
+        {% for user_info in users_info %}
+        <tr>
+            {% for info in user_info %}
+                <td>{{ info }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
