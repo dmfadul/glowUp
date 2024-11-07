@@ -16,8 +16,17 @@
             <nav class="navbar">
                 <ul class="navegacao-primaria">
                     <li><a href="home">Home</a></li>
+                    <li class="dropdown">
+                    <a href="javascript:void(0)">Serviços</a>
+                    <div class="dropdown-content">
+                        <a href="">Musculação</a>
+                        <a href="">Fisioterapia</a>
+                        <a href="">Nutrição</a>
+                    </div>
                     <li><a href="contato">Contato</a></li>
-                    <li><a href="premium" class="premium-btn">Seja Premium</a></li>
+                    <li><a href="logout">Logout</a></li>
+                    <li><a href="premium">Seja Premium</a></li>
+                    <li><a href="profile" class="premium-btn">Meu perfil</a></li>
                 </ul>
                 <i class="fa-solid fa-bars" id="hamburger-icon"></i>
             </nav>
@@ -73,13 +82,15 @@
                 <button type="submit" class="submit-btn">Salvar Alterações</button>
             </form>
             <form action="{{ url_for('register.delete_profile') }}" method="post" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?')">
-                <button type="submit" class="submit-btn" style="background-color: #b22222;">Excluir Conta</button>
-            </form>
+                <button type="submit" class="inactivate-btn">Inativar Conta</button>
+            </form>            
         </fieldset>
     </section>
 
     <footer>
-        <!-- Footer content here, as in the original HTML -->
+        <div class="footer-bottom">
+            &copy; 2024 Glow-Up.
+        </div>
     </footer>
 </body>
 </html>

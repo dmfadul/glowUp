@@ -85,6 +85,47 @@ header {
     font-weight: bold;
 }
 
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-color);
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: var(--secondary-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--hover-color);
+    color: var(--primary-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Ajustes para alinhar o menu com o resto da navegação */
+.navbar a, .dropdown a {
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
 .navbar a {
     display: inline-block;
     margin: 0 15px;
@@ -125,6 +166,31 @@ nav ul li {
     color: var(--hover-color);
     transform: scale(1.1);
 }
+
+/* Estilos do botão de inativação de conta */
+.inactivate-btn {
+    background-color: #b22222;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    margin-left: 80%;
+    margin-top: -11%;
+    border-radius: 5px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: block;
+    width: 20%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(178, 34, 34, 0.2);
+}
+
+.inactivate-btn:hover {
+    background-color: #8b1c1c; /* Uma cor vermelha um pouco mais escura */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(178, 34, 34, 0.3);
+}
+
 
 #home-btn {
     background-color: var(--primary-color); 
