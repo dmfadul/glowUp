@@ -1,6 +1,7 @@
 .venv
 instance/
 **/__pycache__/
+app/routes/admin/__pycache__/
 app/routes/contact/__pycache__/
 app/routes/login/__pycache__/
 app/routes/premium/__pycache__/
