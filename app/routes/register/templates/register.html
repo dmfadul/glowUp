@@ -185,10 +185,35 @@
             initRatingSystem();
             initMenuSystem();
         });
+        
+         // Função para verificar se as senhas coincidem
+    function checkPasswordsMatch() {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmapassword').value;
+        
+        if (password !== confirmPassword) {
+            // Exibir alerta para senhas não correspondentes
+            alert("Senhas não correspondem");
+            return false;
+        }
+        return true;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initRatingSystem();
+        initMenuSystem();
+
+        // Adicionar evento de submissão no formulário
+        const form = document.getElementById('loginForm');
+        form.addEventListener('submit', function(event) {
+            if (!checkPasswordsMatch()) {
+                // Impedir o envio do formulário se as senhas não coincidirem
+                event.preventDefault();
+            }
+        });
+    });
+
 
     </script>
 </body>
 </html>
-
-
-
