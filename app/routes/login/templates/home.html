@@ -95,9 +95,58 @@
                 <h3> </h3>
                 <ul>
                     <li><a href="adm">Página Admin</a></li>
-                    <li><a href="#privacy">Política de privacidade | Termos de uso</a></li>
+                    <li><a href="#" id="privacy-link">Política de privacidade | Termos de uso</a></li>
                 </ul>
             </div>
+            
+            <!-- Popup Modal -->
+            <div id="privacy-popup" class="popup-overlay">
+                <div class="popup-content">
+                    <span id="close-popup" class="close-btn">&times;</span>
+                    <h2>Política de Privacidade e Termos de Uso</h2>
+                    <p style="text-align: justify;">Última atualização: 08/11/2024
+                        <br><br>
+                        No Glow-Up, respeitamos a sua privacidade e estamos comprometidos em proteger suas informações pessoais. Ao usar nosso site, você concorda com a coleta e uso de dados conforme descrito nesta política.
+                        <br>
+                        1. Informações Coletadas
+                        Coletamos informações pessoais que você nos fornece, como nome e e-mail, além de dados de navegação, como endereço IP e tipo de dispositivo.
+                        <br>
+                        2. Uso das Informações
+                        Usamos suas informações para:
+                        <br>
+                        Melhorar nosso site e serviços
+                        Entre em contato com você, se necessário
+                        3. Segurança
+                        Tomamos medidas para proteger suas informações, mas não podemos garantir segurança total.
+                        <br>
+                        4. Seus Direitos
+                        Você pode acessar ou excluir suas informações pessoais a qualquer momento entrando em contato conosco pelo e-mail.
+                        <br>
+                        5. Alterações
+                        Podemos atualizar esta política periodicamente. Se quisermos alterar, publicaremos a versão atualizada em nosso site.</p>
+                        <br><br>
+                        <hr>
+                        <h2>Termos de Uso</h2>
+                        <p style="text-align: justify;">Última atualização: 08/11/2024
+                            <br><br>
+                            Ao acessar o GLOW-UP, você concorda com os seguintes termos.
+                            <br>
+                            1. Uso do Site
+                            Você concorda em usar o site apenas para fins legais e não pode realizar atividades ilegais ou perigosas.
+                            <br>
+                            2. Propriedade
+                            Todo o conteúdo do site é protegido por direitos autorais e você não pode copiar ou redistribuir sem nossa permissão.
+                            <br>
+                            3. Limitação de Responsabilidade
+                            O site é fornecido "como está" e não nos responsabilizamos por danos decorrentes do uso.
+                            <br>
+                            4. Modificações
+                            Podemos atualizar estes termos a qualquer momento. As alterações serão publicadas no site.
+                            
+                            </p>
+                    </div>
+            </div>
+            
             <div class="footer-section social-links">
                 <h3>Siga-nos em nossas redes sociais</h3>
                 <a href="mailto:glow.upldmy@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
@@ -123,6 +172,29 @@
     </footer>
 
     <script>
+        // Referências aos elementos
+        const privacyLink = document.getElementById("privacy-link");
+        const popup = document.getElementById("privacy-popup");
+        const closePopup = document.getElementById("close-popup");
+
+        // Função para abrir o popup
+        privacyLink.addEventListener("click", function(event) {
+            event.preventDefault(); // Evita que o link siga o href
+            popup.style.display = "flex"; // Exibe o popup
+        });
+
+        // Função para fechar o popup
+        closePopup.addEventListener("click", function() {
+            popup.style.display = "none"; // Oculta o popup
+        });
+
+        // Fechar o popup clicando fora da área de conteúdo
+        window.addEventListener("click", function(event) {
+            if (event.target === popup) {
+                popup.style.display = "none";
+            }
+        });
+
         /*Sistema de Classificação*/
         const stars = document.querySelectorAll('.star');
         const ratingValue = document.getElementById('rating-value');
