@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import login_user, logout_user, login_required, current_user
-from app.models.user import User
+from app.models import User, Log
 
 
 
@@ -25,6 +25,7 @@ def home():
 @login_bp.route('/logout')
 def logout():
     logout_user()
+    Log.add_entry(f'Usuário {current_user.id} Deslogado')
     return redirect(url_for('login.login'))
 
 
@@ -48,6 +49,7 @@ def login():
             return redirect(url_for('login.login'))
 
         login_user(user)
+        Log.add_entry(f'Usuário {user.id} Logado')
         return redirect(url_for('login.home'))
     
     else:

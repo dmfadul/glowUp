@@ -1,1 +1,47 @@
-view logs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/adm.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Relatório de Usuários</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Comorbidades</th>
+                        <th>Medicamentos</th>
+                        <th>Alergias</th>
+                        <th>Objetivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for log in logs %}
+                    <tr>
+                        <td>{{ log }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="button-container">
+            <a href="adm" class="button back-button">Voltar</a>
+            <a href="" class="button">Baixar</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('print-button').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            window.print(); 
+        });
+    </script>
+</body>
+</html>    

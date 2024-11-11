@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request
 from flask_login import login_required, logout_user, current_user
-from app.models.user import User
+from app.models import User, Log
 from app import db
 
 
@@ -35,6 +35,8 @@ def register():
                                   objectives=objectives
                                   )
         
+        Log.add_entry(f'Usuário {new_user.id} Cadastrado')
+        
         return redirect(url_for('login.login'))
     else:
         return render_template('register.html')
@@ -59,6 +61,7 @@ def edit_profile():
             user.password = data.get('password')
 
         db.session.commit()
+        Log.add_entry(f'Usuário {user.id} Atualizado')
         return redirect(url_for('register.edit_profile'))
     
     return render_template('edit-profile.html', user=user)
@@ -70,5 +73,5 @@ def delete_profile():
     user = User.query.get(current_user.id)
     user.deactivate()
     logout_user()
-
+    Log.add_entry(f'Usuário {user.id} Deletado')
     return redirect(url_for('register.register'))
