@@ -14,14 +14,15 @@ body {
 
 .button-container {
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Espaçamento entre botões normais */
     margin-top: 20px;
+    justify-content: center;
 }
 
 .button {
-    padding: 10px 10px;
-    height: 20px;
-    font-size: 16px;
+    padding: 10px 20px;
+    height: 30px;
+    font-size: 20px;
     color: #fff;
     background-color: #007bff;
     border: none;
@@ -30,11 +31,14 @@ body {
     transition: background-color 0.3s ease;
     text-decoration: none;
     display: inline-block;
+    width: 100px;
+    text-align: center;
 }
 
 .back-button {
     background-color: #6c757d;
-  
+    margin-right: 40px; /* Espaçamento extra específico para o botão "Voltar" */
+    /* Remova o margin-right caso prefira usar gap no container */
 }
 
 .button:hover {
