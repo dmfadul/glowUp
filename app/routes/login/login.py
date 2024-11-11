@@ -38,11 +38,13 @@ def login():
         password = request.form['password']
 
         user = User.query.filter_by(email=email).first()
+        if not user:
+            flash("Login ou Senha Inválido", "danger")
+            return redirect(url_for('login.login'))
+        
         password_is_correct = user.password == password
-
         if not user or not password_is_correct:
-            flash("Login Inválido", "danger")
-            print("login invalido")
+            flash("Login ou Senha Inválido", "danger")
             return redirect(url_for('login.login'))
 
         login_user(user)

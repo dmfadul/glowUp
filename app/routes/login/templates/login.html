@@ -6,9 +6,7 @@
     <meta name="description" content="Glow-Up ajuda você a ter uma vida saudável e equilibrada com musculação, nutrição e fisioterapia.">
     <title>Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
     <header>
@@ -24,11 +22,15 @@
             </nav>
         </div>
     </header>
+
+    <!-- Flash message container -->
+    <div id="flash-messages"></div>
    
     <section class="content">
         <h1>Login</h1>
         <fieldset>
-            <form action="#" method="post" id="loginForm">
+            <!-- Form action set to Flask login route -->
+            <form action="{{ url_for('login.login') }}" method="post" id="loginForm">
                 <div class="form-group">
                     <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" placeholder="Digite seu e-mail..." required>
@@ -37,7 +39,7 @@
                     <label for="password">Senha:</label>
                     <input type="password" id="password" name="password" placeholder="Digite sua senha..." required>
                 </div>
-                <a href="home"> <button type="submit" >Entrar</button></a>
+                <button type="submit">Entrar</button> <!-- Removed anchor tag -->
                 <p>Ainda não possui uma conta? <a href="register" color=white>Cadastre-se</a> </p>
             </form>
         </fieldset>
@@ -60,7 +62,7 @@
     </footer>
 
     <script>
-        /*Sistema de Classificação*/
+        /* Sistema de Classificação */
         const stars = document.querySelectorAll('.star');
         const ratingValue = document.getElementById('rating-value');
         let selectedRating = 0;
@@ -128,6 +130,25 @@
             initMenuSystem();
         });
 
+        function showFlashMessage(message, category) {
+            const flashContainer = document.getElementById('flash-messages');
+            const flashMessage = document.createElement('div');
+            flashMessage.className = 'flash ' + category;  // Add classes for styling, e.g., 'flash danger'
+            flashMessage.innerText = message;
+            flashContainer.appendChild(flashMessage);
+            
+            // Automatically remove the flash message after 3 seconds
+            setTimeout(() => flashMessage.remove(), 3000);
+        }
+
+        // Check for flash messages from the server
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    showFlashMessage("{{ message }}", "{{ category }}");
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
     </script>
 
 </body>
