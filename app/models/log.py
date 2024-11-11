@@ -8,8 +8,16 @@ class Log(db.Model):
     info = db.Column(db.String(100))
     created_at = db.Column(db.DateTime, default=datetime.datetime.now)
 
-
-    def add_entry(self, info):
-        self.info = info
-        db.session.add(self)
+    @classmethod
+    def add_entry(cls, info):
+        log = cls(info=info)
+        db.session.add(log)
         db.session.commit()
+
+    @classmethod
+    def get_report(cls):
+        report = []
+        for log in cls.query.all():
+            report.append(f"[{log.created_at}]: {log.info}")
+
+        return report

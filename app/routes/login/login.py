@@ -24,8 +24,8 @@ def home():
 
 @login_bp.route('/logout')
 def logout():
-    logout_user()
     Log.add_entry(f'Usuário {current_user.id} Deslogado')
+    logout_user()
     return redirect(url_for('login.login'))
 
 
