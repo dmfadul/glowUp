@@ -23,8 +23,18 @@
         </div>
     </header>
 
-    <!-- Flash message container -->
-    <div id="flash-messages"></div>
+    <!-- Display Flash Messages -->
+    <div class="flash-messages">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+              {% for category, message in messages %}
+                  <div class="alert alert-{{ category }}">
+                      {{ message }}
+                  </div>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+    </div>
    
     <section class="content">
         <h1>Login</h1>
@@ -129,26 +139,6 @@
             initRatingSystem();
             initMenuSystem();
         });
-
-        function showFlashMessage(message, category) {
-            const flashContainer = document.getElementById('flash-messages');
-            const flashMessage = document.createElement('div');
-            flashMessage.className = 'flash ' + category;  // Add classes for styling, e.g., 'flash danger'
-            flashMessage.innerText = message;
-            flashContainer.appendChild(flashMessage);
-            
-            // Automatically remove the flash message after 3 seconds
-            setTimeout(() => flashMessage.remove(), 3000);
-        }
-
-        // Check for flash messages from the server
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    showFlashMessage("{{ message }}", "{{ category }}");
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
     </script>
 
 </body>
