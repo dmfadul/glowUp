@@ -11,7 +11,7 @@ admin_bp = Blueprint('admin',
 @admin_bp.route('/adm')
 def adm():
     if not current_user.is_admin:
-        return redirect(url_for('main.index'))
+        return redirect(url_for('login.index'))
     
     return render_template('adm.html')
 
@@ -20,7 +20,7 @@ def adm():
 @login_required
 def report():
     if not current_user.is_admin:
-        return redirect(url_for('main.index'))
+        return redirect(url_for('login.index'))
     
     users_info = User.gen_report()
     return render_template('report.html', users_info=users_info)
@@ -30,7 +30,7 @@ def report():
 @login_required
 def view_logs():
     if not current_user.is_admin:
-        return redirect(url_for('main.index'))
+        return redirect(url_for('login.index'))
     
     logs = Log.get_report()
     return render_template('view-logs.html', logs=logs)
