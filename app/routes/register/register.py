@@ -64,7 +64,9 @@ def edit_profile():
 
         db.session.commit()
         Log.add_entry(f'Usuário {user.id} Atualizado')
-        flash("Perfil atualizado com sucesso!", "success")
+        
+        # Mensagem de sucesso
+        flash("Alterações salvas com sucesso!", "success")
         return redirect(url_for('register.edit_profile'))
     
     return render_template('edit-profile.html', user=user)

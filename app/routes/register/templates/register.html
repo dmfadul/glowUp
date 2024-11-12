@@ -26,6 +26,12 @@
         </div>
     </header>
     
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="alert {{ messages[0][0] }}">{{ messages[0][1] }}</div>
+        {% endif %}
+    {% endwith %}    
+
     <section class="content">
         <h1>CADASTRE-SE</h1>
         <fieldset>
@@ -108,42 +114,39 @@
     </footer>
 
     <script>
+        // script para impedir que o usuário cadastre um email já registrado na base
+        document.addEventListener('DOMContentLoaded', () => {
+            const emailField = document.getElementById('email');
+            const form = document.getElementById('loginForm');
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const emailField = document.getElementById('email');
-    const form = document.getElementById('loginForm');
-
-    emailField.addEventListener('blur', function() {
-        const email = emailField.value;
-        if (email) {
-            fetch(`/check-email?email=${encodeURIComponent(email)}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.exists) {
-                        alert("Este email já está registrado. Por favor, use outro email.");
-                        
-                        // Usar setTimeout para focar e permitir edição no campo de email
-                        setTimeout(() => {
-                            emailField.focus();
-                            emailField.select(); // Seleciona o texto no campo para facilitar a substituição
-                        }, 0);
-                    }
-                })
-                .catch(error => console.error('Erro ao verificar o email:', error));
-        }
-    });
-
-    form.addEventListener('submit', function(event) {
-        if (document.getElementById('password').value !== document.getElementById('confirmapassword').value) {
-            alert("Senhas não correspondem");
-            event.preventDefault();
-        }
-    });
-});
-
-
-
+            emailField.addEventListener('blur', function() {
+                const email = emailField.value;
+                if (email) {
+                    fetch(`/check-email?email=${encodeURIComponent(email)}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.exists) {
+                                alert("Este email já está registrado. Por favor, use outro email.");
+                                
+                                // Usar setTimeout para focar e permitir edição no campo de email
+                                setTimeout(() => {
+                                    emailField.focus();
+                                    emailField.select(); // Seleciona o texto no campo para facilitar a substituição
+                                }, 0);
+                            }
+                        })
+                        .catch(error => console.error('Erro ao verificar o email:', error));
+                }
+            });
+            // script para comparar senhas
+            form.addEventListener('submit', function(event) {
+                if (document.getElementById('password').value !== document.getElementById('confirmapassword').value) {
+                    alert("Senhas não correspondem");
+                    event.preventDefault();
+                }
+            });
+        });
+        // script para ícone de visualização da senha
         function togglePasswordVisibility() {
             const passwordField = document.getElementById('password');
             const togglePasswordIcon = document.getElementById('togglePassword');
@@ -186,15 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
             this.value = formatPhone(this.value);
         });
 
-        // Função para validar o e-mail
-        function validateEmail() {
-            const email = document.getElementById('email').value;
-            if (!email.includes("@")) {
-                alert("Por favor, insira um e-mail válido.");
-                return false;
-            }
-            return true;
-        }
 
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('loginForm');

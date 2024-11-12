@@ -270,6 +270,24 @@ legend {
     width: 100%; 
 }
 
+.alert {
+    padding: 10px;
+    background-color: #4CAF50; /* Cor verde */
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed; /* Fixar a mensagem na tela */
+    top: 10%;
+    left: 10%;
+    transform: translateX(-50%); /* Centralizar horizontalmente */
+    z-index: 9999; /* Garantir que a mensagem fique visível */
+    display: none; /* Inicialmente oculta */
+}
+
+.alert.show {
+    display: block; /* Mostrar a mensagem */
+}
+
 .toggle-password {
     position: absolute;
     right: 50px;

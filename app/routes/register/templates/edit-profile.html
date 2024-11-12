@@ -33,6 +33,12 @@
         </div>
     </header>
 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="alert {{ messages[0][0] }}">{{ messages[0][1] }}</div>
+        {% endif %}
+    {% endwith %}
+
     <section class="content">
         <h1>EDITAR PERFIL</h1>
         <fieldset>
@@ -102,6 +108,21 @@
         </div>
     </footer>
     <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const alert = document.querySelector('.alert');
+            
+            if (alert) {
+                // Adicionar a classe show para exibir a mensagem
+                alert.classList.add('show');
+
+                // Depois de 3 segundos, ocultar a mensagem
+                setTimeout(() => {
+                    alert.classList.remove('show');
+                }, 3000); // 3000 ms = 3 segundos
+            }
+        });
+
         function togglePasswordVisibility() {
             const passwordField = document.getElementById('password');
             const togglePasswordIcon = document.getElementById('togglePassword');
