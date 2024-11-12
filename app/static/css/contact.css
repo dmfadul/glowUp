@@ -43,6 +43,18 @@ header .navegacao-primaria li a:hover::after {
     color: #fff;
 }
 
+@keyframes inicializar {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 header {
     background-color: var(--primary-color);
     padding: 15px;
@@ -83,6 +95,48 @@ header {
     background-clip: text;
     font-weight: bold;
 }
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-color);
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: var(--secondary-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--hover-color);
+    color: var(--primary-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Ajustes para alinhar o menu com o resto da navegação */
+.navbar a, .dropdown a {
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
 
 .navbar a {
     display: inline-block;
@@ -125,22 +179,26 @@ nav ul li {
     transform: scale(1.1); 
 }
 
+
+
+
 #home-btn {
-    background-color: var(--primary-color);
-    border: 2px solid var(--primary-color); 
+    background-color: var(--primary-color); 
+    color: var(--secondary-color); 
+    border: 2px solid var(--primary-color);
     padding: 10px 20px; 
-    border-radius: 10px; 
+    border-radius: 25px; 
     font-size: 16px; 
     font-weight: bold; 
     text-transform: uppercase; 
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; 
     cursor: pointer; 
 }
 
 #home-btn:hover {
     background-color: var(--hover-color); 
-    color: var(--primary-color);
-    transform: scale(1.05);
+    color: var(--primary-color); 
+    transform: scale(1.05); 
 }
 
 #home-btn {
@@ -152,6 +210,7 @@ nav ul li {
 #home-btn:hover{
     background-color:  #002413d0;
     color: white;
+
 }
 
 .premium-btn {
@@ -162,18 +221,27 @@ nav ul li {
     border-radius: 10px;
     font-size: 16px;
     font-weight: bold;
-    text-transform: uppercase;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     cursor: pointer;
 }
 
-/* Contato */
+@keyframes slide {
+    100% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-150%);
+    }
+}
+
+/* Login */
 .content {
     background: #fff;
-    padding: 40px;
-    margin: 200px auto 47px;
+    padding: 50px;
+    margin: 210px auto 47px;
     border-radius: 10px;
     max-width: 800px;
+
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in;
 }
@@ -199,18 +267,17 @@ legend {
 }
 
 button[type="submit"] {
-    background: #2ba069;
-    color: #fff;
-    border: none;
-    padding: 15px 20px;
+    background-color: #57d399; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
     border-radius: 5px;
-    font-size: 1.3em;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    display: block;
-    width: 15%;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 168, 89, 0.2);
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: lowercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer; 
+    text-decoration: none;
 }
 
 button[type="submit"]:hover {
@@ -246,7 +313,7 @@ button[type="submit"]:hover {
 .form-group input,
 .form-group textarea,
 .form-group select {
-    width: 80%;
+    width: 100%;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -258,7 +325,7 @@ button[type="submit"]:hover {
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    border-color: #00a859; 
+    border-color: #00a859;
     outline: none;
     box-shadow: 0 0 8px rgba(0, 168, 89, 0.5);
     background-color: #eafaf1; 
@@ -270,7 +337,16 @@ button[type="submit"]:hover {
     top: -30px;
     left: 10px;
     font-size: 0.85em;
-    color: #00a859; 
+    color: #00a859;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Rodapé */
@@ -400,33 +476,10 @@ footer {
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(45deg, #00100a, #025029, #009148, #57d399);
-    
 }
 
 ::-webkit-scrollbar-track {
     background-color: #E0E0E0;
-    
-}
-
-/* Animations */
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-150%);
-    }
 }
 
 /* Large Screens (Notebooks/Desktops) */
@@ -466,68 +519,6 @@ footer {
     nav ul {
         gap: 15px;
     }
-/* Navegação principal */
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: var(--primary-color);
-}
-
-/* Links do menu */
-.navbar li a {
-    color: var(--secondary-color);
-    padding: 10px 15px;
-    text-decoration: none;
-    transition: color 0.3s, transform 0.3s;
-    border-radius: 4px;
-}
-
-.navbar li a:hover {
-    color: var(--hover-color);
-    transform: scale(1.1);
-}
-
-/* Dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Conteúdo do dropdown escondido inicialmente */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--primary-color);
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 4px;
-    text-align: left;
-}
-
-/* Links do dropdown */
-.dropdown-content a {
-    color: var(--secondary-color);
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-/* Efeito hover nos links do dropdown */
-.dropdown-content a:hover {
-    background-color: var(--hover-color);
-    color: var(--primary-color);
-}
-
-/* Mostrar o dropdown ao passar o mouse */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
     .navbar a {
         font-size: 1rem;
@@ -607,15 +598,10 @@ footer {
     .stars {
         justify-content: center;
     }
-
-    .classificao {
-        right: 0;
-    }
 }
 
-
+/* Mobile Phones */
 @media screen and (max-width: 480px) {
-   
     header {
         justify-content: space-between;
         padding: 30px 70px;
@@ -644,7 +630,7 @@ footer {
         right: 20px;
         animation: sobeSecao .8s ease-in-out forwards;
     }
-
+    
     .container {
         padding: 0 10px;
     }
@@ -732,13 +718,142 @@ footer {
         justify-content: center;
     }
 
-    .classificao{
-        position: relative;
+    .classificao {
         right: 145px;
     }
 }
 
-@media screen and (max-width: 375px) {
+@media (max-width: 375px) {
+   
+    header {
+        justify-content: space-between;
+        padding: 30px 70px;
+    }
+
+    header .navegacao-primaria {
+        display: none;
+    }
+
+    header i {
+        color: #f7f7f7;
+        font-size: 3rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    header .navegacao-primaria.ativado {
+        background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
+        position: absolute;
+        display: grid;
+        top: 80px;
+        color: white;
+        z-index: 1;
+        padding: 30px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 0 0 4px 4px;
+        right: 20px;
+        animation: sobeSecao .8s ease-in-out forwards;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    #hamburger-icon {
+        display: block;
+    }
+
+    .hero {
+        margin-top: 100px;
+    }
+
+    .content {
+        padding: 20px;
+        margin: 140px auto 20px;
+        max-width: 100%;
+        border-radius: 15px;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+        margin: 5px 0;
+        padding: 8px 12px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 20px;
+        gap: 15px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    #home-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .service-boxes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .service-box {
+        max-width: 100%;
+    }
+
+    .footer-sections {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 15px;
+    }
+
+    .social-links {
+        margin-top: 20px;
+    }
+
+    .stars {
+        justify-content: center;
+    }
+
+    .plan {
+        max-width: 300px;
+        max-height: 300px;
+        min-height: 300px;
+        min-width: 300px;
+    }
+
+    .premium-plans {
+        padding: 0;
+    }
+
+    .classificao {
+        right: 120px;
+    }
+}
+
+
+
+@media(max-width: 320px) {
     header {
         justify-content: space-between;
         padding: 30px 70px;
@@ -768,17 +883,21 @@ footer {
         animation: sobeSecao .8s ease-in-out forwards;
     }
     
+    .container {
+        padding: 0 10px;
+    }
+
     header {
-        padding: 8px;
+        padding: 10px;
     }
 
-    .logo {
-        font-size: 18px;
+    #hamburger-icon {
+        display: block;
     }
-
-    .navbar a {
-        font-size: 0.85rem;
-        padding: 6px 10px;
+    
+    .hero {
+        margin-top: 100px;
+        margin-left: 50px;
     }
 
     .content {
@@ -787,107 +906,48 @@ footer {
         padding: 20px;
     }
 
-
-    .form-group label {
-        font-size: 0.9rem;
+    .logo {
+        font-size: 20px;
+        margin-bottom: 8px;
     }
 
-    .footer-section h3 {
-        font-size: 1.1rem;
-    }
-
-    footer {
-        width: 100%;
-    }
-    .social-links a {
-        font-size: 1.3rem;
-        margin: 0 8px;
-    }
-
-    .stars {
-        justify-content: center;
-    }
-
-    .classificao{
-        position: relative;
-        right: 140px;
-    }
-    
-}
-
-@media screen and (max-width: 320px) {
-    header {
-        justify-content: space-between;
-        padding: 30px 70px;
-    }
-
-    header .navegacao-primaria {
+    nav ul {
         display: none;
     }
 
-    header i {
-        color: #f7f7f7;
-        font-size: 3rem;
-    }
-
-    header .navegacao-primaria.ativado {
-        background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
         position: absolute;
-        display: grid;
-        top: 80px;
-        color: white;
-        z-index: 1;
-        padding: 30px;
-        font-size: 1.6rem;
-        font-weight: bold;
-        border-radius: 0 0 4px 4px;
-        right: 20px;
-        animation: sobeSecao .8s ease-in-out forwards;
-    }
-    
-    header {
-        padding: 8px;
-    }
-
-    .logo {
-        font-size: 18px;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 20px;
+        gap: 15px;
     }
 
     .navbar a {
-        font-size: 0.85rem;
-        padding: 6px 10px;
-    }
-
-    .content {
-        width: 100%;
-        max-width: 400px; /* Define uma largura máxima para o formulário */
-        padding: 20px;
-    }
-
-    .form-group label {
         font-size: 0.9rem;
+        margin: 5px 0;
+        padding: 8px 12px;
     }
 
-    .footer-section h3 {
-        font-size: 1.1rem;
+    .social-links a {
+        font-size: 1.4rem;
+    }
+
+    .stars .star {
+        font-size: 1.5rem;
+    }
+
+    .classificao {
+        right: 113px;
     }
 
     footer {
         width: 100%;
     }
 
-    .social-links a {
-        font-size: 1.3rem;
-        margin: 0 8px;
-    }
-
-    .stars {
-        justify-content: center;
-    }
-
-    .classificao{
-        position: relative;
-        right: 115px;
-    }
-    
 }
+
