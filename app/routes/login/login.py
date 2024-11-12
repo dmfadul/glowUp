@@ -2,8 +2,6 @@ from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import login_user, logout_user, login_required, current_user
 from app.models import User, Log
 
-
-
 login_bp = Blueprint('login',
                      __name__,
                      template_folder='templates',
@@ -39,18 +37,13 @@ def login():
         password = request.form['password']
 
         user = User.query.filter_by(email=email).first()
-        if not user:
-            flash("Login ou Senha Inválido", "danger")
-            return redirect(url_for('login.login'))
         
-        password_is_correct = user.password == password
-        if not user or not password_is_correct:
-            flash("Login ou Senha Inválido", "danger")
-            return redirect(url_for('login.login'))
-
-        login_user(user)
-        Log.add_entry(f'Usuário {user.id} Logado')
-        return redirect(url_for('login.home'))
+        # Verifica se o usuário existe e se a senha está correta
+        if user and user.password == password:
+            login_user(user)
+            Log.add_entry(f'Usuário {user.id} Logado')
+            return redirect(url_for('login.home'))
+        else:
+            flash("Usuário ou senha inválidos", "danger")  # Mensagem de erro
     
-    else:
-        return render_template('login.html')
+    return render_template('login.html')

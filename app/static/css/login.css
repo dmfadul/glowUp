@@ -116,6 +116,58 @@ button[type="submit"]:hover {
     
 }
 
+.flash-messages {
+    max-width: 15%;
+    margin-top: 10%;
+    margin-left: 42%;
+    margin-bottom: -10%;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Estilos para a mensagem de sucesso */
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para a mensagem de erro */
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para a mensagem de aviso */
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para a mensagem de informação */
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
 .toggle-password {
     position: absolute;
     right: 1px;
@@ -527,7 +579,19 @@ button[type="submit"]:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .flash-messages {
+        max-width: 90%;
+        font-size: 0.9rem;
+    }
+}
 
+@media (max-width: 480px) {
+    .flash-messages {
+        max-width: 100%;
+        font-size: 0.8rem;
+    }
+}
 
 @media(max-width: 320px) {
     header {
