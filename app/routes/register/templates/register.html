@@ -114,6 +114,22 @@
     </footer>
 
     <script>
+
+        // Função para formatar o telefone e limitar a 11 dígitos numéricos
+        function formatPhone(input) {
+            input = input.replace(/\D/g, ""); // Remove tudo que não é dígito
+            if (input.length > 11) input = input.slice(0, 11); // Limita a 11 dígitos
+            input = input.replace(/^(\d{2})(\d)/g, "($1) $2"); // Formato (99) 9 9999-9999
+            input = input.replace(/(\d)(\d{4})$/, "$1-$2"); 
+            return input;
+        }
+
+        document.getElementById('phone').addEventListener('input', function() {
+            this.value = formatPhone(this.value);
+        });
+
+
+
         // script para impedir que o usuário cadastre um email já registrado na base
         document.addEventListener('DOMContentLoaded', () => {
             const emailField = document.getElementById('email');
@@ -176,18 +192,6 @@
                 toggleConfirmPasswordIcon.classList.add('fa-eye');
             }
         }
-
-        // Função para formatar o telefone
-        function formatPhone(input) {
-            input = input.replace(/\D/g, ""); 
-            input = input.replace(/^(\d{2})(\d)/g, "($1) $2"); 
-            input = input.replace(/(\d)(\d{4})$/, "$1-$2"); 
-            return input;
-        }
-
-        document.getElementById('phone').addEventListener('input', function() {
-            this.value = formatPhone(this.value);
-        });
 
 
         document.addEventListener('DOMContentLoaded', () => {
