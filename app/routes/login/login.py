@@ -16,6 +16,18 @@ def index():
     return redirect(url_for('login.login'))
 
 
+@login_bp.route('/musculação')
+def musculação():
+    return render_template('musculação.html')
+
+@login_bp.route('/fisioterapia')
+def fisioterapia():
+    return render_template('fisioterapia.html')
+
+@login_bp.route('/nutrição')
+def nutrição():
+    return render_template('nutrição.html')
+
 @login_bp.route('/home')
 @login_required
 def home():

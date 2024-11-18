@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Glow-Up ajuda você a ter uma vida saudável e equilibrada com musculação, nutrição e fisioterapia.">
+    <title>Glow-Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="home" class="glow">GLOW-UP</a></h1>
+            <nav class="navbar">
+                <ul class="navegacao-primaria">
+                    <li><a href="home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">Serviços</a>
+                        <div class="dropdown-content">
+                            <a href="musculação">Musculação</a>
+                            <a href="fisioterapia">Fisioterapia</a>
+                            <a href="nutrição">Nutrição</a>
+                        </div>
+                    </li>
+                    <li><a href="contato">Contato</a></li>
+                    <li><a href="logout">Logout</a></li>
+                    <li><a href="premium">Seja Premium</a></li>
+                    <li><a href="profile" class="premium-btn">Meu perfil</a></li>
+                </ul>
+                <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" style="font-size: 47px;"> > > M U S C U L A Ç Ã O</h1>
+            <h2 class="hero-subtitle" style="color: #2c8b00;">Transforme seu Corpo com Treinamento de Força</h2>
+            <a href="cadastro.html" class="btn">Exercícios e Academias</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h1>Nossos Serviços</h1>
+            <div class="service-item">
+                <i class="fas fa-dumbbell"></i>
+                <h3>Treinamento Personalizado</h3>
+                <p>Desenvolvemos planos de treinamento personalizados para atender às suas necessidades específicas.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Consultoria de Condicionamento Físico</h3>
+                <p>Nossos profissionais oferecem consultas detalhadas para avaliar sua condição física e estilo de vida.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-gym"></i>
+                <h3>Academias e Acompanhamento</h3>
+                <p>Oferecemos orientação sobre as melhores academias, acompanhamento de evolução e planejamento de atividades físicas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dicas de Musculação -->
+    <section id="tips" class="tips">
+        <div class="container">
+            <h1>Dicas de Musculação</h1>
+            <ul>
+                <li><strong>1. Mantenha-se Hidratado:</strong> Beber água antes, durante e depois do treino é essencial.</li>
+                <li><strong>2. Treine com Foco:</strong> Estabeleça metas e mantenha o foco durante os exercícios.</li>
+                <li><strong>3. Varie os Exercícios:</strong> Experimente diferentes exercícios para evitar a monotonia e trabalhar diferentes grupos musculares.</li>
+                <li><strong>4. Escute Seu Corpo:</strong> Respeite seus limites e descanse quando necessário.</li>
+                <li><strong>5. Não Pule o Aquecimento:</strong> Sempre faça um aquecimento adequado para evitar lesões.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Calendário de Treinos -->
+    <section id="workout-calendar" class="calendar">
+        <div class="container">
+            <h1>Calendário de Treinos</h1>
+            <p>Baixe nosso calendário de treinos personalizado para acompanhar seu progresso!</p>
+            <a href="calendario_treinos.pdf" class="btn" download>Baixar Calendário</a>
+        </div>
+    </section>
+
+    <!-- Galeria de Fotos -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h1>Galeria de Fotos</h1>
+            <div class="gallery-grid">
+                <img src="foto1.jpg" alt="Treino de musculação">
+                <img src="foto2.jpg" alt="Treino em grupo">
+                <img src="foto3.jpg" alt="Equipamentos de musculação">
+                <img src="foto4.jpg" alt="Alimentação saudável">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-sections">
+            <div class="footer-section quick-links">
+                <h3> </h3>
+                <ul>
+                    <li><a href="adm">Página Admin</a></li>
+                    <li><a href="#" id="privacy-link">Política de privacidade | Termos de uso</a></li>
+                </ul>
+            </div>
+            
+            <!-- Popup Modal -->
+            <div id="privacy-popup" class="popup-overlay">
+                <div class="popup-content">
+                    <span id="close-popup" class="close-btn">&times;</span>
+                    <h2>Política de Privacidade e Termos de Uso</h2>
+                    <p style="text-align: justify;">Última atualização: 08/11/2024
+                        <br><br>
+                        No Glow-Up, respeitamos a sua privacidade e estamos comprometidos em proteger suas informações pessoais. Ao usar nosso site, você concorda com a coleta e uso de dados conforme descrito nesta política.
+                        <br>
+                        1. Informações Coletadas
+                        Coletamos informações pessoais que você nos fornece, como nome e e-mail, além de dados de navegação, como endereço IP e tipo de dispositivo.
+                        <br>
+                        2. Uso das Informações
+                        Usamos suas informações para:
+                        <br>
+                        Melhorar nosso site e serviços
+                        Entre em contato com você, se necessário
+                        3. Segurança
+                        Tomamos medidas para proteger suas informações, mas não podemos garantir segurança total.
+                        <br>
+                        4. Seus Direitos
+                        Você pode acessar ou excluir suas informações pessoais a qualquer momento entrando em contato conosco pelo e-mail.
+                        <br>
+                        5. Alterações
+                        Podemos atualizar esta política periodicamente. Se quisermos alterar, publicaremos a versão atualizada em nosso site.</p>
+                        <br><br>
+                        <hr>
+                        <h2>Termos de Uso</h2>
+                        <p style="text-align: justify;">Última atualização: 08/11/2024
+                            <br><br>
+                            Ao acessar o GLOW-UP, você concorda com os seguintes termos.
+                            <br>
+                            1. Uso do Site
+                            Você concorda em usar o site apenas para fins legais e não pode realizar atividades ilegais ou perigosas.
+                            <br>
+                            2. Propriedade
+                            Todo o conteúdo do site é protegido por direitos autorais e você não pode copiar ou redistribuir sem nossa permissão.
+                            <br>
+                            3. Limitação de Responsabilidade
+                            O site é fornecido "como está" e não nos responsabilizamos por danos decorrentes do uso.
+                            <br>
+                            4. Modificações
+                            Podemos atualizar estes termos a qualquer momento. As alterações serão publicadas no site.
+                            
+                            </p>
+                    </div>
+            </div>
+            
+            <div class="footer-section social-links">
+                <h3>Siga-nos em nossas redes sociais</h3>
+                <a href="mailto:glow.upldmy@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+                <a href="https://chat.whatsapp.com/LVMMf7SKTL23pxjujo2ogy" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-section footer-rating">
+                <p class="classificao">Avalie-nos</p>
+                <div class="stars">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <p class="" id="rating-value"></p> 
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Glow-Up.
+        </div>
+    </footer>
+
+    <script>
+        // Referências aos elementos
+        const privacyLink = document.getElementById("privacy-link");
+        const popup = document.getElementById("privacy-popup");
+        const closePopup = document.getElementById("close-popup");
+
+        // Função para abrir o popup
+        privacyLink.addEventListener("click", function(event) {
+            event.preventDefault(); // Evita que o link siga o href
+            popup.style.display = "flex"; // Exibe o popup
+        });
+
+        // Função para fechar o popup
+        closePopup.addEventListener("click", function() {
+            popup.style.display = "none"; // Oculta o popup
+        });
+
+        // Fechar o popup clicando fora da área de conteúdo
+        window.addEventListener("click", function(event) {
+            if (event.target === popup) {
+                popup.style.display = "none";
+            }
+        });
+
+        /*Sistema de Classificação*/
+        const stars = document.querySelectorAll('.star');
+        const ratingValue = document.getElementById('rating-value');
+        let selectedRating = 0;
+
+        function initRatingSystem() {
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    selectedRating = index + 1;
+                    updateStars(selectedRating);
+                    if (ratingValue) {
+                        ratingValue.textContent = `Você classificou ${selectedRating} estrela(s)`;
+                    }
+                });
+            });
+        }
+
+        function updateStars(rating) {
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        /* Menu do site */
+        function initMenuSystem() {
+            const hamburger = document.getElementById('hamburger-icon');
+            const nav = document.querySelector('nav');
+            const ativaMenu = document.querySelector('.fa-bars');
+            const navMenu = document.querySelector('header .navegacao-primaria');
+
+            if (hamburger && nav) {
+                hamburger.addEventListener('click', () => {
+                    nav.classList.toggle('active');
+                });
+            }
+            
+            if (ativaMenu && navMenu) {
+                ativaMenu.addEventListener('click', () => {
+                    ativaMenu.classList.toggle('fa-x');
+                    navMenu.classList.toggle('ativado');
+                });
+            }
+
+            document.addEventListener('click', (e) => {
+                if (nav && !nav.contains(e.target) && 
+                    hamburger && !hamburger.contains(e.target)) {
+                    nav.classList.remove('active');
+                }
+                
+                if (navMenu && !navMenu.contains(e.target) && 
+                    ativaMenu && !ativaMenu.contains(e.target)) {
+                    navMenu.classList.remove('ativado');
+                    if (ativaMenu.classList.contains('fa-x')) {
+                        ativaMenu.classList.remove('fa-x');
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initRatingSystem();
+            initMenuSystem();
+        });
+
+    </script>
+    
+</body>
+</html>

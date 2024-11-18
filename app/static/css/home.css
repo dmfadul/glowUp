@@ -287,6 +287,104 @@ nav ul li {
 }
 
 /* Services Section */
+
+.tips ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tips li {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: transform 0.3s;
+}
+
+.tips li:hover {
+    transform: translateY(-5px);
+}
+
+/* Calendário de Treinos */
+.calendar {
+    text-align: center;
+    background: VAR(--secondary-color);
+}
+.calendar a {
+    margin-top: 20px;
+}
+
+/* Galeria de Fotos */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.gallery-grid {
+    background-color:var(--background-color) ;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+      
+                /* Tips Section */
+    .tips {
+        background-color: var(--about-background-color);
+        padding: 50px 0;
+    }
+
+    .tips .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .tips .section-title {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #836d4a;
+    }
+
+    .tips .tip-item {
+        background-color: var(--background-color);
+        border: 1px solid var(--border-background-color);
+        border-radius: 5px;
+        padding: 20px;
+        margin: 20px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .tips .tip-item h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: var(--text-color);
+    }
+
+    .tips .tip-item p {
+        font-size: 1em;
+        line-height: 1.6;
+        color: var(--text-color);
+    }
+    .testimonials {
+        padding: 50px 0;
+        background: #f1f1f1;
+    }
+    
+    .testimonial-item {
+        margin: 20px 0;
+    }
+
 .services {
     background: #ebeeeb;
     padding: 60px 20px;

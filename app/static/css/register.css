@@ -661,7 +661,7 @@ footer {
     }
 
     header {
-        padding: 10px;
+        padding: 8px 12px;
     }
 
     #hamburger-icon {
@@ -669,8 +669,8 @@ footer {
     }
 
     .logo {
-        font-size: 20px;
-        margin-bottom: 8px;
+        font-size: 16px;
+        margin-bottom: 3px;
     }
 
     .hero {
@@ -701,7 +701,7 @@ footer {
     }
 
     .navbar a {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
     }
 
     .footer-sections {
