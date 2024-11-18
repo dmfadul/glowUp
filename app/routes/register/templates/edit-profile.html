@@ -33,6 +33,12 @@
         </div>
     </header>
 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="alert {{ messages[0][0] }}">{{ messages[0][1] }}</div>
+        {% endif %}
+    {% endwith %}
+
     <section class="content">
         <h1>EDITAR PERFIL</h1>
         <fieldset>
@@ -53,6 +59,7 @@
                 <div class="form-group">
                     <label for="password">Nova senha:</label>
                     <input type="password" id="password" name="password" placeholder="Deixe em branco para manter a mesma senha">
+                    <i class="fa-solid fa-eye toggle-password" id="togglePassword" onclick="togglePasswordVisibility()"></i>
                 </div>
                 <fieldset>
                     <legend>Informações Complementares</legend>
@@ -100,5 +107,85 @@
             &copy; 2024 Glow-Up.
         </div>
     </footer>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const alert = document.querySelector('.alert');
+            
+            if (alert) {
+                // Adicionar a classe show para exibir a mensagem
+                alert.classList.add('show');
+
+                // Depois de 3 segundos, ocultar a mensagem
+                setTimeout(() => {
+                    alert.classList.remove('show');
+                }, 3000); // 3000 ms = 3 segundos
+            }
+        });
+
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const togglePasswordIcon = document.getElementById('togglePassword');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                togglePasswordIcon.classList.remove('fa-eye');
+                togglePasswordIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                togglePasswordIcon.classList.remove('fa-eye-slash');
+                togglePasswordIcon.classList.add('fa-eye');
+            }
+        }
+
+        function toggleConfirmPasswordVisibility() {
+            const confirmPasswordField = document.getElementById('confirmapassword');
+            const toggleConfirmPasswordIcon = document.getElementById('toggleConfirmPassword');
+            
+            if (confirmPasswordField.type === 'password') {
+                confirmPasswordField.type = 'text';
+                toggleConfirmPasswordIcon.classList.remove('fa-eye');
+                toggleConfirmPasswordIcon.classList.add('fa-eye-slash');
+            } else {
+                confirmPasswordField.type = 'password';
+                toggleConfirmPasswordIcon.classList.remove('fa-eye-slash');
+                toggleConfirmPasswordIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Função para formatar o telefone
+        function formatPhone(input) {
+            input = input.replace(/\D/g, ""); 
+            input = input.replace(/^(\d{2})(\d)/g, "($1) $2"); 
+            input = input.replace(/(\d)(\d{4})$/, "$1-$2"); 
+            return input;
+        }
+
+        document.getElementById('phone').addEventListener('input', function() {
+            this.value = formatPhone(this.value);
+        });
+
+        // Função para validar o e-mail
+        function validateEmail() {
+            const email = document.getElementById('email').value;
+            if (!email.includes("@")) {
+                alert("Por favor, insira um e-mail válido.");
+                return false;
+            }
+            return true;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('loginForm');
+            form.addEventListener('submit', function(event) {
+                if (document.getElementById('password').value !== document.getElementById('confirmapassword').value) {
+                    alert("Senhas não correspondem");
+                    event.preventDefault();
+                }
+            });
+        });
+
+        
+    </script>
 </body>
 </html>

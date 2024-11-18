@@ -26,6 +26,12 @@
         </div>
     </header>
     
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="alert {{ messages[0][0] }}">{{ messages[0][1] }}</div>
+        {% endif %}
+    {% endwith %}    
+
     <section class="content">
         <h1>CADASTRE-SE</h1>
         <fieldset>
@@ -35,36 +41,46 @@
                     <label for="name">Nome completo:</label>
                     <input type="text" id="name" name="name" placeholder="ex.: Maria da Silva" required>
                 </div>
+
                 <div class="form-group">
                     <label for="phone">Telefone:</label>
                     <input type="text" id="phone" name="phone" placeholder="ex.: (41) 9 1234-4321" required>
                 </div>
+
                 <div class="form-group">
                     <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" placeholder="ex.: mariadasilva@gmail.com" required>
                 </div>
+
                 <div class="form-group">
                     <label for="password">Crie sua senha:</label>
                     <input type="password" id="password" name="password" placeholder="ex.: 123@M75" required>
+                    <i class="fa-solid fa-eye toggle-password" id="togglePassword" onclick="togglePasswordVisibility()"></i>
                 </div>
                 <div class="form-group">
                     <label for="confirmapassword">Confirme sua senha:</label>
                     <input type="password" id="confirmapassword" name="confirmapassword" placeholder="ex.: 123@M75" required>
+                    <i class="fa-solid fa-eye toggle-password" id="toggleConfirmPassword" onclick="toggleConfirmPasswordVisibility()"></i>
                 </div>
+                
+                
                 <fieldset>
                     <legend>Informações Complementares</legend>
                     <div class="form-group">
                         <label for="comorbidities">Comorbidades/Doenças:</label>
                         <input type="text" id="comorbidities" name="comorbidities" placeholder="ex.: Possuo asma, diabete, hérnia de disco">
                     </div>
+
                     <div class="form-group">
                         <label for="medicines">Medicamentos em Uso:</label>
                         <textarea id="medicines" name="medicines" rows="2" placeholder="ex.: Tomo o medicamento x para tratar y, n vezes ao dia" ></textarea>                  
                     </div>
+
                     <div class="form-group">
                         <label for="allergies">Alergias:</label>
                         <textarea id="allergies" name="allergies" rows="2" placeholder="ex.: Possuo alergia à tomate e amendoim. Possuo intolerância à lactose"></textarea>
                     </div>
+
                     <div class="form-group">
                         <label for="objectives">Objetivos:</label>
                         <select id="objectives" name="objectives" required>
@@ -98,125 +114,95 @@
     </footer>
 
     <script>
-        /*Sistema de Classificação*/
-        const stars = document.querySelectorAll('.star');
-        const ratingValue = document.getElementById('rating-value');
-        let selectedRating = 0;
 
-        function initRatingSystem() {
-            stars.forEach((star, index) => {
-                star.addEventListener('click', () => {
-                    selectedRating = index + 1;
-                    updateStars(selectedRating);
-                    if (ratingValue) {
-                        ratingValue.textContent = `Você classificou ${selectedRating} estrela(s)`;
-                    }
-                });
-            });
-        }
-
-        function updateStars(rating) {
-            stars.forEach((star, index) => {
-                if (index < rating) {
-                    star.classList.add('active');
-                } else {
-                    star.classList.remove('active');
-                }
-            });
-        }
-
-        // Função para formatar o telefone
+        // Função para formatar o telefone e limitar a 11 dígitos numéricos
         function formatPhone(input) {
-            input = input.replace(/\D/g, ""); // Remove tudo que não for dígito
-            input = input.replace(/^(\d{2})(\d)/g, "($1) $2"); // Adiciona parênteses ao DDD
-            input = input.replace(/(\d)(\d{4})$/, "$1-$2"); // Adiciona o hífen no número
+            input = input.replace(/\D/g, ""); // Remove tudo que não é dígito
+            if (input.length > 11) input = input.slice(0, 11); // Limita a 11 dígitos
+            input = input.replace(/^(\d{2})(\d)/g, "($1) $2"); // Formato (99) 9 9999-9999
+            input = input.replace(/(\d)(\d{4})$/, "$1-$2"); 
             return input;
         }
 
-        // Evento para formatar o campo de telefone automaticamente
         document.getElementById('phone').addEventListener('input', function() {
             this.value = formatPhone(this.value);
         });
 
-        // Função para validar o e-mail
-        function validateEmail() {
-            const email = document.getElementById('email').value;
-            if (!email.includes("@")) {
-                alert("Por favor, insira um e-mail válido. O campo de e-mail deve conter o símbolo '@'.");
-                return false;
-            }
-            return true;
-        }
 
-        /* Menu do site */
-        function initMenuSystem() {
-            const hamburger = document.getElementById('hamburger-icon');
-            const nav = document.querySelector('nav');
-            const ativaMenu = document.querySelector('.fa-bars');
-            const navMenu = document.querySelector('header .navegacao-primaria');
 
-            if (hamburger && nav) {
-                hamburger.addEventListener('click', () => {
-                    nav.classList.toggle('active');
-                });
-            }
-            
-            if (ativaMenu && navMenu) {
-                ativaMenu.addEventListener('click', () => {
-                    ativaMenu.classList.toggle('fa-x');
-                    navMenu.classList.toggle('ativado');
-                });
-            }
+        // script para impedir que o usuário cadastre um email já registrado na base
+        document.addEventListener('DOMContentLoaded', () => {
+            const emailField = document.getElementById('email');
+            const form = document.getElementById('loginForm');
 
-            document.addEventListener('click', (e) => {
-                if (nav && !nav.contains(e.target) && 
-                    hamburger && !hamburger.contains(e.target)) {
-                    nav.classList.remove('active');
-                }
-                
-                if (navMenu && !navMenu.contains(e.target) && 
-                    ativaMenu && !ativaMenu.contains(e.target)) {
-                    navMenu.classList.remove('ativado');
-                    if (ativaMenu.classList.contains('fa-x')) {
-                        ativaMenu.classList.remove('fa-x');
-                    }
+            emailField.addEventListener('blur', function() {
+                const email = emailField.value;
+                if (email) {
+                    fetch(`/check-email?email=${encodeURIComponent(email)}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.exists) {
+                                alert("Este email já está registrado. Por favor, use outro email.");
+                                
+                                // Usar setTimeout para focar e permitir edição no campo de email
+                                setTimeout(() => {
+                                    emailField.focus();
+                                    emailField.select(); // Seleciona o texto no campo para facilitar a substituição
+                                }, 0);
+                            }
+                        })
+                        .catch(error => console.error('Erro ao verificar o email:', error));
                 }
             });
+            // script para comparar senhas
+            form.addEventListener('submit', function(event) {
+                if (document.getElementById('password').value !== document.getElementById('confirmapassword').value) {
+                    alert("Senhas não correspondem");
+                    event.preventDefault();
+                }
+            });
+        });
+        // script para ícone de visualização da senha
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const togglePasswordIcon = document.getElementById('togglePassword');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                togglePasswordIcon.classList.remove('fa-eye');
+                togglePasswordIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                togglePasswordIcon.classList.remove('fa-eye-slash');
+                togglePasswordIcon.classList.add('fa-eye');
+            }
         }
+
+        function toggleConfirmPasswordVisibility() {
+            const confirmPasswordField = document.getElementById('confirmapassword');
+            const toggleConfirmPasswordIcon = document.getElementById('toggleConfirmPassword');
+            
+            if (confirmPasswordField.type === 'password') {
+                confirmPasswordField.type = 'text';
+                toggleConfirmPasswordIcon.classList.remove('fa-eye');
+                toggleConfirmPasswordIcon.classList.add('fa-eye-slash');
+            } else {
+                confirmPasswordField.type = 'password';
+                toggleConfirmPasswordIcon.classList.remove('fa-eye-slash');
+                toggleConfirmPasswordIcon.classList.add('fa-eye');
+            }
+        }
+
 
         document.addEventListener('DOMContentLoaded', () => {
-            initRatingSystem();
-            initMenuSystem();
+            const form = document.getElementById('loginForm');
+            form.addEventListener('submit', function(event) {
+                if (document.getElementById('password').value !== document.getElementById('confirmapassword').value) {
+                    alert("Senhas não correspondem");
+                    event.preventDefault();
+                }
+            });
         });
-        
-         // Função para verificar se as senhas coincidem
-    function checkPasswordsMatch() {
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirmapassword').value;
-        
-        if (password !== confirmPassword) {
-            // Exibir alerta para senhas não correspondentes
-            alert("Senhas não correspondem");
-            return false;
-        }
-        return true;
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        initRatingSystem();
-        initMenuSystem();
-
-        // Adicionar evento de submissão no formulário
-        const form = document.getElementById('loginForm');
-        form.addEventListener('submit', function(event) {
-            if (!checkPasswordsMatch()) {
-                // Impedir o envio do formulário se as senhas não coincidirem
-                event.preventDefault();
-            }
-        });
-    });
-
-
     </script>
 </body>
 </html>

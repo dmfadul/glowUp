@@ -270,6 +270,37 @@ legend {
     width: 100%; 
 }
 
+.alert {
+    padding: 10px;
+    background-color: #4CAF50; /* Cor verde */
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed; /* Fixar a mensagem na tela */
+    top: 10%;
+    left: 10%;
+    transform: translateX(-50%); /* Centralizar horizontalmente */
+    z-index: 9999; /* Garantir que a mensagem fique visível */
+    display: none; /* Inicialmente oculta */
+}
+
+.alert.show {
+    display: block; /* Mostrar a mensagem */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
 .form-group {
     margin-bottom: 25px;
     position: relative;
@@ -303,6 +334,7 @@ legend {
     border-radius: 10px;
     font-size: large;
     margin-bottom: 10px;
+    margin-top: 5px;
     background: #f9f9f9;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
@@ -313,6 +345,7 @@ legend {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 10px;
+    margin-top: 5px;
     font-size: large;
     background: #f9f9f9;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
