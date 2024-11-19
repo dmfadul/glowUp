@@ -67,17 +67,18 @@ header {
 .content {
     background: #fff;
     padding: 10px;
-    margin: 210px auto 47px;
+    margin: 0 auto; /* Ajuste as margens para remover o espaço */
     border-radius: 10px;
     max-width: 25%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in;
 }
 
+
 h1 {
     color: #4fa289;
     font-size: 2.5em;
-    margin-bottom: 60px;
+    margin: 0 0 10px; /* Remova margens superiores extras */
     text-align: center;
 }
 
@@ -89,7 +90,7 @@ fieldset {
 legend {
     font-size: 1.3em;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: px;
     color: #333;
 }
 
@@ -117,16 +118,15 @@ button[type="submit"]:hover {
 }
 
 .flash-messages {
-    max-width: 15%;
-    margin-top: 10%;
-    margin-left: 42%;
-    margin-bottom: -10%;
+    max-width: 50%; /* Ajuste conforme necessário */
+    margin: 0 auto 10px; /* Centralizado horizontalmente e espaço inferior mínimo */
     padding: 10px;
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
     animation: fadeIn 1s ease-in-out;
 }
+
 
 /* Estilos para a mensagem de sucesso */
 .alert-success {
@@ -636,7 +636,7 @@ button[type="submit"]:hover {
     }
     
     .hero {
-        margin-top: 100px;
+        margin-top: 0px;
         margin-left: 50px;
     }
 

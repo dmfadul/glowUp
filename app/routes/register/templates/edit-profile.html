@@ -17,12 +17,13 @@
                 <ul class="navegacao-primaria">
                     <li><a href="home">Home</a></li>
                     <li class="dropdown">
-                    <a href="javascript:void(0)">Serviços</a>
-                    <div class="dropdown-content">
-                        <a href="musculação.html">Musculação</a>
-                        <a href="fisioterapia.html">Fisioterapia</a>
-                        <a href="nutrição.html">Nutrição</a>
-                    </div>
+                        <a href="javascript:void(0)">Serviços</a>
+                        <div class="dropdown-content">
+                            <a href="musculação">Musculação</a>
+                            <a href="fisioterapia">Fisioterapia</a>
+                            <a href="nutrição">Nutrição</a>
+                        </div>
+                    </li>
                     <li><a href="contato">Contato</a></li>
                     <li><a href="logout">Logout</a></li>
                     <li><a href="premium">Seja Premium</a></li>
@@ -88,7 +89,7 @@
                 </fieldset>
                 <button type="submit" class="submit-btn">Salvar Alterações</button>
             </form>
-            <form action="{{ url_for('register.delete_profile') }}" method="post" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?')">
+            <form action="{{ url_for('register.delete_profile') }}" method="post" onsubmit="return confirm('Tem certeza que deseja inativar sua conta?')">
                 <button type="submit" class="inactivate-btn">Inativar Conta</button>
             </form>            
         </fieldset>

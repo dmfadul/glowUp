@@ -68,6 +68,75 @@ header {
     transition: background-color 0.3s; 
 }
 
+/* Estilo do Popup */
+.popup-overlay {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(75, 194, 133, 0.5); /* Fundo semi-transparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Valor alto para garantir que fique no topo */
+}
+
+.popup-content {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    margin-top: 5%;
+    color: #000000;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+
+    /* Habilitar o scroll */
+    height: 70vh; /* Altura máxima do popup */
+    overflow-y: auto; /* Scroll vertical */
+    overflow-x: hidden; /* Evitar scroll horizontal */
+
+    /* Garantir que o conteúdo fique no topo */
+    position: relative;
+    z-index: 10000; /* Garante que o conteúdo fique sobre o fundo */
+}
+
+
+.popup-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background: rgba(75, 194, 133, 0.8); /* Cor do scroll */
+    border-radius: 4px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+    background: rgba(200, 200, 200, 0.2); /* Fundo do track */
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#privacy-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#privacy-link:hover {
+    text-decoration: underline;
+    color: #57d399;
+}
+
+
+
 .container {
     display: flex;
     flex-direction: column;
